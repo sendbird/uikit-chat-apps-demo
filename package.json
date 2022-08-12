@@ -1,6 +1,7 @@
 {
   "name": "uikit-chat-apps-demo",
   "version": "0.1.0",
+  "homepage": "/unified-inbox",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
