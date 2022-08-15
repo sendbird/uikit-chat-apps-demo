@@ -19,16 +19,6 @@ export default function App() {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/uikit">UIKit</Link>
-          </li>
-        </ul>
-
-        <hr />
 
         {/*
         A <Switch> looks through all its children <Route>
@@ -40,7 +30,9 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <div><iframe className="uikit-frame" src="/uikit" title="UIKit"></iframe></div>
+            <div>control</div>
           </Route>
+
           <Route path="/uikit">
             <SBProvider appId={APP_ID} userId={USER_ID} nickname={NICKNAME}>
               <CustomizedApp />
