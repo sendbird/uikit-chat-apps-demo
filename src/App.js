@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SBProvider from "@sendbird/uikit-react/SendbirdProvider";
+import "@sendbird/uikit-react/dist/index.css";
+import CustomizedApp from "./CustomizedApp";
+import "./styles.css";
 
-function App() {
+let APP_ID = process.env.REACT_APP_APP_ID
+let USER_ID = process.env.REACT_APP_USER_ID
+let NICKNAME = process.env.REACT_APP_NICKNAME
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SBProvider appId={APP_ID} userId={USER_ID} nickname={NICKNAME}>
+      <CustomizedApp />
+    </SBProvider>
   );
 }
-
-export default App;
