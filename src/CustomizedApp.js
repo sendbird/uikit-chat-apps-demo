@@ -3,6 +3,7 @@ import SBConversation from "@sendbird/uikit-react/Channel";
 import SBChannelList from "@sendbird/uikit-react/ChannelList";
 import withSendBird from "@sendbird/uikit-react/withSendbird";
 import "./styles.css";
+import "@sendbird/uikit-react/dist/index.css";
 import ChatHeader from "./ChatHeader";
 import ChannelPreview from "./ChannelPreview";
 
