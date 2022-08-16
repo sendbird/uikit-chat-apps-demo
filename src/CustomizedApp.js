@@ -1,107 +1,50 @@
 import React, { useState, useCallback } from "react";
 import SBConversation from "@sendbird/uikit-react/Channel";
 import SBChannelList from "@sendbird/uikit-react/ChannelList";
-import SBChannelSettings from "@sendbird/uikit-react/ChannelSettings";
 import withSendBird from "@sendbird/uikit-react/withSendbird";
+import "./styles.css";
+import SBProvider from "@sendbird/uikit-react/SendbirdProvider";
+import ChatHeader from "./ChatHeader";
+import ChannelPreview from "./ChannelPreview";
 
-function CustomizedApp(props) {
-  // default props
-  const {
-    stores: { sdkStore, userStore },
-    config: {
-      isOnline,
-      userId,
-      appId,
-      accessToken,
-      theme,
-      userListQuery,
-      logger,
-      pubSub,
-    },
-  } = props;
-  const logDefaultProps = useCallback(() => {
-    console.log(
-      "SDK store list log",
-      sdkStore.initialized,
-      sdkStore.sdk,
-      sdkStore.loading,
-      sdkStore.error
-    );
-    console.log(
-      "User store list log",
-      userStore.initialized,
-      userStore.user,
-      userStore.loading
-    );
-    console.log(
-      "Config list log",
-      isOnline,
-      userId,
-      appId,
-      accessToken,
-      theme,
-      userListQuery,
-      logger,
-      pubSub
-    );
-  }, [
-    sdkStore.initialized,
-    sdkStore.sdk,
-    sdkStore.loading,
-    sdkStore.error,
-    userStore.initialized,
-    userStore.user,
-    userStore.loading,
-    isOnline,
-    userId,
-    appId,
-    accessToken,
-    theme,
-    userListQuery,
-    logger,
-    pubSub,
-  ]);
-  logDefaultProps();
+function CustomizedApp() {
+  let APP_ID = process.env.REACT_APP_APP_ID;
+  let USER_ID = process.env.REACT_APP_USER_ID;
+  let NICKNAME = process.env.REACT_APP_NICKNAME;
 
-  // useState
-  const [showSettings, setShowSettings] = useState(false);
-  const [currentChannelUrl, setCurrentChannelUrl] = useState("");
+  const [channel, setChannel] = useState(null);
 
+  const onChannelSelect = (_channel) => {
+    setChannel(_channel);
+    window.history.pushState({}, _channel.name, "/" + _channel.url);
+  };
+
+  const onBack = () => {
+    setChannel(null);
+    window.history.pushState({}, document.title, "/");
+  };
 
   return (
     <div className="customized-app">
-      <div className="sendbird-app__wrap">
-        {/* <button> Click here</button> */}
-        <div className="sendbird-app__channellist-wrap">
-          <button onClick={(userId, accessToken) => alert("call simple fetch passing in user id etc")} id="promotion-button"> Trigger promotion</button>
-          <SBChannelList
-            onChannelSelect={(channel) => {
-              if (channel && channel.url) {
-                setCurrentChannelUrl(channel.url);
-              }
-            }}
-          />
-        </div>
-
-        <div className="sendbird-app__conversation-wrap">
+      <SBProvider appId={APP_ID} userId={USER_ID} nickname={NICKNAME}>
+        {channel ? (
           <SBConversation
-            channelUrl={currentChannelUrl}
-            onChatHeaderActionClick={() => {
-              setShowSettings(true);
-            }}
+            channelUrl={channel.url}
+            renderChatHeader={({ channel, user }) => (
+              <ChatHeader channel={channel} user={user} onBack={onBack} />
+            )}
           />
-        </div>
-      </div>
-      {showSettings && (
-        <div className="sendbird-app__settingspanel-wrap">
-          <SBChannelSettings
-            channelUrl={currentChannelUrl}
-            onCloseClick={() => {
-              setShowSettings(false);
-            }}
+        ) : (
+          <SBChannelList
+            renderChannelPreview={({ channel }) => (
+              <ChannelPreview
+                channel={channel}
+                onChannelSelect={onChannelSelect}
+              />
+            )}
           />
-        </div>
-      )}
+        )}
+      </SBProvider>
     </div>
   );
 }
