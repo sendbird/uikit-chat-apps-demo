@@ -25,7 +25,7 @@ function CustomizedApp() {
   };
 
   return (
-    <div className="customized-app">
+    <div className="App">
       <SBProvider appId={APP_ID} userId={USER_ID} nickname={NICKNAME}>
         {channel ? (
           <SBConversation

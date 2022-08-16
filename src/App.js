@@ -7,12 +7,10 @@ import UIKitFrame from "./UIKitFrame";
 export default function App() {
   return (
     <Router>
-      <div>
         <Routes>
           <Route exact path="/" element={<UIKitFrame />}></Route>
           <Route path="/uikit" element={<CustomizedApp />}></Route>
         </Routes>
-      </div>
     </Router>
   );
 }
