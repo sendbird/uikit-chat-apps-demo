@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import withSendBird from "@sendbird/uikit-react/withSendbird";
 
-function UIKitFrame({ reset }) {
+function TriggerControls({ reset }) {
   return (
     <div>
       <div className="button-wrapper">
@@ -12,10 +12,8 @@ function UIKitFrame({ reset }) {
         <button>Marketplace</button>
         <button onClick={reset}>Reset</button>
       </div>
-
-      <iframe className="uikit-frame" src="/uikit" title="UIKit"></iframe>
     </div>
   );
 }
 
-export default withSendBird(UIKitFrame);
+export default withSendBird(TriggerControls);

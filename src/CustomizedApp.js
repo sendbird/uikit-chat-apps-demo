@@ -22,7 +22,7 @@ function CustomizedApp() {
   };
 
   return (
-    <div className="App">
+    <div className="uikit">
       {channel ? (
         <SBConversation
           channelUrl={channel.url}

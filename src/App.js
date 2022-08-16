@@ -1,10 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import SBProvider from "@sendbird/uikit-react/SendbirdProvider";
 
 import "./styles.css";
 import CustomizedApp from "./CustomizedApp";
-import UIKitFrame from "./UIKitFrame";
+import TriggerControls from "./TriggerControls";
 import Sendbird from './setupUser';
 
 export default function App() {
@@ -29,7 +28,6 @@ export default function App() {
   }, []);
 
   const reset = async () => {
-    alert("reset");
     setIsLoading(true);
     sendbird.reset();
 
@@ -47,12 +45,8 @@ export default function App() {
   return (
     // need SB Provider at top level so all of app has access to sendbird data
     <SBProvider appId={APP_ID} userId={user.userId} nickname={NICKNAME}>
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<UIKitFrame reset={reset} />}></Route>
-          <Route path="/uikit" element={<CustomizedApp userId={user.userId} />}></Route>
-        </Routes>
-      </Router >
+      <TriggerControls reset={reset} />
+      <CustomizedApp userId={user.userId} />
     </SBProvider>
   );
 }
