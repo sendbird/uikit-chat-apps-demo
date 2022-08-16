@@ -1,60 +1,58 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import SBProvider from "@sendbird/uikit-react/SendbirdProvider";
-import "@sendbird/uikit-react/dist/index.css";
-import CustomizedApp from "./CustomizedApp";
+
 import "./styles.css";
+import CustomizedApp from "./CustomizedApp";
+import UIKitFrame from "./UIKitFrame";
 import Sendbird from './setupUser';
-
-
-let APP_ID = process.env.REACT_APP_APP_ID
-let USER_ID = process.env.REACT_APP_USER_ID
-let NICKNAME = process.env.REACT_APP_NICKNAME
 
 export default function App() {
   // setup
   const [user, setUser] = React.useState();
-  React.useEffect(() => {
-    const sendbird = new Sendbird();
 
+  const [isLoading, setIsLoading] = React.useState(true);
+  let APP_ID = process.env.REACT_APP_APP_ID;
+  let NICKNAME = process.env.REACT_APP_NICKNAME;
+  const sendbird = new Sendbird(process.env.REACT_APP_APP_ID);
+
+  React.useEffect(() => {
     const setup = async () => {
+      // setup a new user if non exists and create necesary channels e.g. promotion
+      // Some of this data needs to be passed to the trigger button and sent in fetch request
       const [user, promotionsChannel] = await sendbird.setUp();
-      setUser(user)
+      setUser(user);
+      setIsLoading(false);
 
     }
     setup();
   }, []);
 
+  const reset = async () => {
+    alert("reset");
+    setIsLoading(true);
+    sendbird.reset();
+
+    const [user, promotionsChannel] = await sendbird.setUp();
+    setUser(user);
+    setIsLoading(false);
+
+
+  }
+
+  if (isLoading) {
+    return null;
+  }
+
   return (
-    <Router>
-      <div>
-
-        {/*
-        A <Switch> looks through all its children <Route>
-        elements and renders the first one whose path
-        matches the current URL. Use a <Switch> any time
-        you have multiple routes, but you want only one
-        of them to render at a time
-      */}
-        <Switch>
-          <Route exact path="/">
-            <div><iframe className="uikit-frame" src="/uikit" title="UIKit"></iframe></div>
-            <div>control</div>
-          </Route>
-
-          <Route path="/uikit">
-            {user &&
-              <SBProvider appId={APP_ID} userId={user.userId} nickname="bob4">
-                <CustomizedApp />
-              </SBProvider>}
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    // need SB Provider at top level so all of app has access to sendbird data
+    <SBProvider appId={APP_ID} userId={user.userId} nickname={NICKNAME}>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<UIKitFrame reset={reset} />}></Route>
+          <Route path="/uikit" element={<CustomizedApp userId={user.userId} />}></Route>
+        </Routes>
+      </Router >
+    </SBProvider>
   );
 }

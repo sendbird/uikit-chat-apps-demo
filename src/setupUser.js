@@ -5,36 +5,43 @@ import {
 } from '@sendbird/chat/groupChannel';
 import { v4 as uuidv4 } from 'uuid';
 
-const sb = SendbirdChat.init({
-    appId: "76AE2940-073F-41F6-8C14-0B3C60BABB83",
-    localCacheEnabled: false,
-    modules: [new GroupChannelModule()]
-});
+
 class Sendbird {
+    constructor(appId) {
+        this.sb = SendbirdChat.init({
+            appId,
+            localCacheEnabled: false,
+            modules: [new GroupChannelModule()]
+        });
+    }
     async setUp() {
-        const userIdStorage = localStorage.getItem('sb-user-id');
-        if (userIdStorage) {
-            const user = await sb.connect(userIdStorage);
-            return user;
+        const userId = localStorage.getItem('sb-user-id');
+        if (userId) {
+            const user = await this.sb.connect(userId);
+            const promotionsChannel = await this.sb.groupChannel.getChannel(`promotion-${userId}`);
+
+            return [user, promotionsChannel];
         } else {
-            const userId = uuidv4();
-            const user = await sb.connect(userId);
+            const newUserId = uuidv4();
+            const user = await this.sb.connect(newUserId);
 
             const groupChannelParams = {};
+            groupChannelParams.channelUrl = `promotion-${newUserId}`;
             groupChannelParams.addUserIds = [user.userId];
             groupChannelParams.name = "Promotion";
             groupChannelParams.isDistinct = false;
             groupChannelParams.operatorUserIds = [user.userId];
-            const promotionsChannel = await sb.groupChannel.createChannel(groupChannelParams);
+
+            const promotionsChannel = await this.sb.groupChannel.createChannel(groupChannelParams);
 
             localStorage.setItem('sb-user-id', user.userId);
+
             return [user, promotionsChannel];
 
         }
     }
-    async reset() {
-        localStorage.deleteItem('sb-user-id')
-        await this.setUp();
+    reset() {
+        localStorage.removeItem('sb-user-id');
     }
 }
 
