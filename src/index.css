@@ -13,6 +13,7 @@ code {
 }
 
 .uikit{
+  border: 1px solid grey;
   height:800px;
   width: 500px;
 }
