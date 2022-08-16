@@ -1,4 +1,4 @@
-/* .customized-app {
+/* .customized.uikit {
     height: calc(100vh - 20px);
   } */
 
@@ -20,39 +20,39 @@ html {
   margin: 0;
 }
 
-.App {
+.uikit {
   font-family: sans-serif;
   text-align: center;
   height: 100vh;
   width: 100vw;
 }
 
-.App .sendbird-channel-header,
-.App .sendbird-channel-list {
+.uikit .sendbird-channel-header,
+.uikit .sendbird-channel-list {
   width: 100vw;
 }
 
-.App .sendbird-message-content.incoming .sendbird-message-content__middle,
-.App .sendbird-message-content.outgoing .sendbird-message-content__middle {
+.uikit .sendbird-message-content.incoming .sendbird-message-content__middle,
+.uikit .sendbird-message-content.outgoing .sendbird-message-content__middle {
   max-width: calc(100% - 70px);
 }
-.App
+.uikit
   .sendbird-message-content.outgoing
   .sendbird-message-content__middle
   .sendbird-message-content__middle__body-container,
-.App
+.uikit
   .sendbird-message-content.incoming
   .sendbird-message-content__middle
   .sendbird-message-content__middle__body-container {
   width: 100%;
 }
-.App .sendbird-og-message-item-body {
+.uikit .sendbird-og-message-item-body {
   min-width: initial;
   max-width: initial;
 }
 
 /* Channel list preview styles */
-.channel-preview-wrapper {
+.channel-preview-w.uikiter {
   max-width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -61,8 +61,8 @@ html {
   padding: 20px;
   border-bottom: 1px solid var(--sendbird-light-background-100);
 }
-.channel-preview-wrapper:hover,
-.channel-preview-wrapper:active {
+.channel-preview-w.uikiter:hover,
+.channel-preview-w.uikiter:active {
   background-color: var(--sendbird-light-background-100);
 }
 .channel-preview-cover {
@@ -106,39 +106,39 @@ html {
 }
 
 /* Override Sendbird styles if not using custom channel list preview  */
-/* .App .sendbird-channel-list,
-.App .sendbird-channel-header,
-.App
+/* .uikit .sendbird-channel-list,
+.uikit .sendbird-channel-header,
+.uikit
   .sendbird-channel-list
   .sendbird-channel-preview
   .sendbird-channel-preview__content__upper,
-.App
+.uikit
   .sendbird-channel-list
   .sendbird-channel-preview
   .sendbird-channel-preview__content__lower,
-.App .sendbird-channel-list .sendbird-channel-preview {
+.uikit .sendbird-channel-list .sendbird-channel-preview {
   width: 100%;
 }
-.App
+.uikit
   .sendbird-channel-list
   .sendbird-channel-preview.sendbird-channel-preview--active {
   border-left: none;
   border-bottom: solid 1px var(--sendbird-light-onlight-04);
   background-color: inherit;
 }
-.App
+.uikit
   .sendbird-channel-list
   .sendbird-channel-preview.sendbird-channel-preview--active
   .sendbird-channel-preview__content__upper__header__channel-name {
   color: inherit;
 }
-.App
+.uikit
   .sendbird-channel-list
   .sendbird-channel-preview.sendbird-channel-preview--active
   .sendbird-channel-preview__action {
   display: none;
 }
-.App
+.uikit
   .sendbird-channel-list
   .sendbird-channel-preview.sendbird-channel-preview--active
   .sendbird-channel-preview__content__upper__last-message-at {
