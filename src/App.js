@@ -9,6 +9,7 @@ import SBProvider from "@sendbird/uikit-react/SendbirdProvider";
 import "@sendbird/uikit-react/dist/index.css";
 import CustomizedApp from "./CustomizedApp";
 import "./styles.css";
+import Sendbird from './setupUser';
 
 
 let APP_ID = process.env.REACT_APP_APP_ID
@@ -16,6 +17,19 @@ let USER_ID = process.env.REACT_APP_USER_ID
 let NICKNAME = process.env.REACT_APP_NICKNAME
 
 export default function App() {
+  // setup
+  const [user, setUser] = React.useState();
+  React.useEffect(() => {
+    const sendbird = new Sendbird();
+
+    const setup = async () => {
+      const [user, promotionsChannel] = await sendbird.setUp();
+      setUser(user)
+
+    }
+    setup();
+  }, []);
+
   return (
     <Router>
       <div>
@@ -34,9 +48,10 @@ export default function App() {
           </Route>
 
           <Route path="/uikit">
-            <SBProvider appId={APP_ID} userId={USER_ID} nickname={NICKNAME}>
-              <CustomizedApp />
-            </SBProvider>
+            {user &&
+              <SBProvider appId={APP_ID} userId={user.userId} nickname="bob4">
+                <CustomizedApp />
+              </SBProvider>}
           </Route>
         </Switch>
       </div>
