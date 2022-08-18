@@ -20,11 +20,33 @@ html {
   margin: 0;
 }
 
+.trigger-controls {
+  margin-top: 8px;
+  width: 18vw;
+  float: left;
+}
+
+.trigger-controls button{
+  width: 15vw;
+  display: block; 
+  margin: 10px;
+  background-color: var(--sendbird-light-primary-300);;
+  border: none;
+  color: white;
+  position: relative; 
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 16px;
+  white-space: pre-line;
+  word-break: break-word;
+}
+
 .uikit {
   font-family: sans-serif;
   text-align: center;
   height: 100vh;
-  width: 100vw;
+  width: 80vw;
+  float: left;
 }
 
 .uikit .sendbird-channel-header,

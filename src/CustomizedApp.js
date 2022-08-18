@@ -8,8 +8,6 @@ import ChatHeader from "./ChatHeader";
 import ChannelPreview from "./ChannelPreview";
 
 function CustomizedApp() {
-
-
   const [channel, setChannel] = useState(null);
 
   const onChannelSelect = (_channel) => {
