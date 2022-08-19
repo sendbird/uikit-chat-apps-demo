@@ -8,7 +8,7 @@ import Sendbird from "./setupUser";
 export default function App() {
   // setup
   const [user, setUser] = React.useState();
-  const [channelUrl, setChannelUrl] = React.useState();
+  const [channelUrls, setChannelUrls] = React.useState({});
   const [isLoading, setIsLoading] = React.useState(true);
   let APP_ID = process.env.REACT_APP_APP_ID;
   let NICKNAME = process.env.REACT_APP_NICKNAME;
@@ -18,9 +18,23 @@ export default function App() {
     const setup = async () => {
       // setup a new user if non exists and create necesary channels e.g. promotion
       // Some of this data needs to be passed to the trigger button and sent in fetch request
-      const [user, promotionsChannel] = await sendbird.setUp();
+      const [
+        user,
+        promotionsChannel,
+        conciergeChannel,
+        supportChannel,
+        trackingChannel,
+        marketplaceChannel
+      ] = await sendbird.setUp();
+      console.log(promotionsChannel);
       setUser(user);
-      setChannelUrl(promotionsChannel.url);
+      setChannelUrls({
+        'promotion': promotionsChannel.url,
+        'sales-concierge': conciergeChannel.url,
+        'support-agent': supportChannel.url,
+        'order-tracking': trackingChannel.url,
+        'marketplace': marketplaceChannel.url
+      });
       setIsLoading(false);
     };
     setup();
@@ -30,21 +44,36 @@ export default function App() {
     setIsLoading(true);
     sendbird.reset();
 
-    const [user, promotionsChannel] = await sendbird.setUp();
+    const [
+      user,
+      promotionsChannel,
+      conciergeChannel,
+      supportChannel,
+      trackingChannel,
+      marketplaceChannel
+    ] = await sendbird.setUp();
     setUser(user);
+    setChannelUrls({
+      'promotion': promotionsChannel.url,
+      'sales-concierge': conciergeChannel.url,
+      'support-agent': supportChannel.url,
+      'order-tracking': trackingChannel.url,
+      'marketplace': marketplaceChannel.url
+
+    });
     setIsLoading(false);
   };
 
-  const promotion =  () => {
-    let url = "http://localhost:8283/start";
-    console.log("channel=", channelUrl);
+
+  const start = (url, name) => {
+    console.log("channel=", channelUrls);
 
     fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ channelUrl }),
+      body: JSON.stringify({ channelUrl: channelUrls[name] }),
     });
   };
 
@@ -55,10 +84,10 @@ export default function App() {
   return (
     // need SB Provider at top level so all of app has access to sendbird data
     <div className="component-wrapper">
-    <SBProvider appId={APP_ID} userId={user.userId} nickname={NICKNAME}>
-      <TriggerControls reset={reset} promotion={promotion} />
-      <CustomizedApp userId={user.userId} />
-    </SBProvider>
+      <SBProvider appId={APP_ID} userId={user.userId} nickname={NICKNAME}>
+        <TriggerControls reset={reset} start={start} />
+        <CustomizedApp userId={user.userId} />
+      </SBProvider>
     </div>
   );
 }
