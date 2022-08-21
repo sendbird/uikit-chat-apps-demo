@@ -23,13 +23,16 @@ function CustomizedApp() {
   return (
     <div className="uikit">
       {channel ? (
+        <div className="sb-conversation"> 
         <SBConversation
           channelUrl={channel.url}
           renderChatHeader={({ channel, user }) => (
             <ChatHeader channel={channel} user={user} onBack={onBack} />
           )}
         />
+        </div>
       ) : (
+        <div className="sb-channel-list"> 
         <SBChannelList
           renderChannelPreview={({ channel }) => (
             <ChannelPreview
@@ -38,6 +41,7 @@ function CustomizedApp() {
             />
           )}
         />
+        </div>
       )}
     </div>
   );
