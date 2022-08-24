@@ -5,6 +5,28 @@ import CustomizedApp from "./CustomizedApp";
 import TriggerControls from "./TriggerControls";
 import Sendbird from "./setupUser";
 
+const appManifests = [
+  {
+    "name": "basic-chat-app",
+    // "url": "http://localhost:8283/basic-chat-app",
+    "command": "basic"
+  },
+  {
+    "name": "promotion",
+    // "url": "http://localhost:8284/app",
+    "url": "https://chatsamples.com/promotion/app"
+  },
+  {
+    "name": "order-tracking",
+    "url": "http://localhost:8286/app"
+  },
+  {
+    "name": "concierge",
+    // "url": "http://localhost:8287/app",
+    "url": "https://chatsamples.com/sales-concierge/app"
+  }
+];
+
 export default function App() {
   // setup
   const [user, setUser] = React.useState();
@@ -84,7 +106,7 @@ export default function App() {
   return (
     // need SB Provider at top level so all of app has access to sendbird data
     <div className="component-wrapper">
-      <SBProvider appId={APP_ID} userId={user.userId} nickname={NICKNAME}>
+      <SBProvider config={{ appManifests }} appId={APP_ID} userId={user.userId} nickname={NICKNAME}>
         <TriggerControls reset={reset} start={start} />
         <CustomizedApp userId={user.userId} />
       </SBProvider>
