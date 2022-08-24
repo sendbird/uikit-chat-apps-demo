@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import withSendBird from "@sendbird/uikit-react/withSendbird";
 import "./styles.css";
 import "@sendbird/uikit-react/dist/index.css";
@@ -18,6 +18,7 @@ function AppDescription() {
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-marketing.png"
               class="lazyloaded"
               data-was-processed="true"
+              alt="marketing-promotions-icon"
             />
           </div>
           <h5 class="h7">Marketing promotions</h5>
@@ -28,6 +29,7 @@ function AppDescription() {
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-sales-concierge.png"
               class="lazyloaded"
               data-was-processed="true"
+              alt="sales-icon"
             />
           </div>
           <h5 class="h7">Sales conversations</h5>
@@ -38,6 +40,7 @@ function AppDescription() {
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-customer-support.png"
               class="lazyloaded"
               data-was-processed="true"
+              alt="customer-support-icon"
             />
           </div>
           <h5 class="h7">Customer support</h5>
@@ -48,6 +51,7 @@ function AppDescription() {
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-notifications.png"
               class="lazyloaded"
               data-was-processed="true"
+              alt="order-updates-icon"
             />
           </div>
           <h5 class="h7">Order updates</h5>
@@ -58,6 +62,7 @@ function AppDescription() {
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-community-conversations@2x.png"
               class="lazyloaded"
               data-was-processed="true"
+              alt="marketplace-icon"
             />
           </div>
           <h5 class="h7">Marketplace</h5>

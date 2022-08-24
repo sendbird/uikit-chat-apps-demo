@@ -4,8 +4,10 @@ import "./styles.css";
 import CustomizedApp from "./CustomizedApp";
 import TriggerControls from "./TriggerControls";
 import Sendbird from "./setupUser";
+import AppDescription from "./AppDescription";
 
 export default function App() {
+
   // setup
   const [user, setUser] = React.useState();
   const [channelUrls, setChannelUrls] = React.useState({});
@@ -64,7 +66,6 @@ export default function App() {
     setIsLoading(false);
   };
 
-
   const start = (url, name) => {
     console.log("channel=", channelUrls);
 
@@ -85,7 +86,7 @@ export default function App() {
     // need SB Provider at top level so all of app has access to sendbird data
     <div className="component-wrapper">
     <SBProvider appId={APP_ID} userId={user.userId} nickname={NICKNAME}>
-      <TriggerControls reset={reset} promotion={promotion} />
+      <TriggerControls reset={reset} start={start} />
       <CustomizedApp userId={user.userId} />
       <AppDescription />
     </SBProvider>
