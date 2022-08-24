@@ -84,11 +84,10 @@ export default function App() {
   return (
     // need SB Provider at top level so all of app has access to sendbird data
     <div className="component-wrapper">
-    <SBProvider appId={APP_ID} userId={user.userId} nickname={NICKNAME}>
-      <TriggerControls reset={reset} promotion={promotion} />
-      <CustomizedApp userId={user.userId} />
-      <AppDescription />
-    </SBProvider>
+      <SBProvider appId={APP_ID} userId={user.userId} nickname={NICKNAME}>
+        <TriggerControls reset={reset} start={start} />
+        <CustomizedApp userId={user.userId} />
+      </SBProvider>
     </div>
   );
 }
