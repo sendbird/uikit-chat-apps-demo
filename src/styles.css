@@ -25,32 +25,29 @@ button {
 }
 
 .component-wrapper {
-  position: relative;
   max-width: 1280px;
+  padding: 30px;
   margin: auto;
-  height: 100vh;
-  width: 100vw;
-
+  height: 100%;
+  width: 100%;
 }
 
 .flex-wrap {
-  flex-wrap: wrap;
-  display: flex;
-  height: 90vh;
+  height: 80%;
   margin: 40px 0px;
 }
 
 .uikit .sb-channel-list {
-  width: 100%;
+  width: 400px;
   height: 100%;
 }
 
 .uikit .sb-conversation,
 .uikit .sb-channel-list {
-  width: 90%;
+  width: 400px;
   height: 90%;
-  padding-left: 5%;
-  padding-top: 5%
+  padding-left: 10%;
+  padding-top: 5%;
 }
 
 .sendbird-conversation,
@@ -73,7 +70,8 @@ button {
 
 .uikit {
   width: 40%;
-  /* height: 100vh; */
+  height: 800px;
+  float: left;
   background: #6210cc;
   border-radius: 15px;
   padding: 20px;
@@ -154,10 +152,10 @@ button {
 
 .app-description {
   width: 40%;
-  /* height: 100vh; */
-  padding-top: 5%;
+  float: left;
+  height: 800px;
+  overflow-y: auto;
   padding-left: 10%;
-
 }
 
 .app-description h3 {
@@ -168,7 +166,7 @@ button {
   font-family: "Gellix", sans-serif;
   color: #0d0d0d;
   margin-top: 0px;
-  margin-bottom: 24px;
+  margin-bottom: 0px;
   text-rendering: optimizeLegibility;
 }
 
@@ -185,6 +183,11 @@ button {
 
 .inbox-bullet {
   padding: 12px 0;
+}
+
+.inbox-bullets{
+display: inline-block;
+height: 100%;
 }
 
 .bullet-icon {
@@ -251,7 +254,7 @@ button {
 
 .channel-preview-wrapper div {
   display: inline-block;
-  width: 50%;
+  width: 70%;
 }
 .channel-preview-name {
   margin-right: 10%;
@@ -262,7 +265,7 @@ button {
 }
 
 .channel-preview-last-message-date {
-  width: 10% !important;
+  width: 15% !important;
   display: flex;
   float: right;
   margin-top: 5px;
