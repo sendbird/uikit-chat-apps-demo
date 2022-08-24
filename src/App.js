@@ -12,6 +12,12 @@ const appManifests = [
     "command": "basic"
   },
   {
+    "name": "giphy-app",
+    // "url": "http://localhost:8282/app",
+    "url": "https://chatsamples.com/giphy/app",
+    "command": "giphy"
+  },
+  {
     "name": "promotion",
     // "url": "http://localhost:8284/app",
     "url": "https://chatsamples.com/promotion/app"
