@@ -14,145 +14,269 @@
     height: 56px !important;
   } */
 
-  body,
-  html {
-    padding: 0;
-    margin: 0;
-  }
-  
-  .uikit .sb-channel-list {
-    width: 100%;
-  }
-  
-  .uikit .sb-conversation {
-    width: 100%;
-  }
-  
-  .sendbird-channel-list,
-  .sendbird-channel-header {
-    width: 100% !important;
-  }
-  
-  .sendbird-channel-list__body {
-    margin-top: 20%;
-  }
-  
-  .trigger-controls {
-    margin-top: 8px;
-    width: 18vw;
-    height: 100vh;
-    float: left;
-  }
-  
-  .trigger-controls button {
-    width: 15vw;
-    display: block;
-    margin: 10px;
-    background-color: var(--sendbird-light-primary-300);
-    border: none;
-    color: white;
-    position: relative;
-    display: inline-block;
-    padding: 8px 12px;
-    border-radius: 16px;
-    white-space: pre-line;
-    word-break: break-word;
-  }
-  
-  .uikit {
-    font-family: sans-serif;
-    height: 100vh;
-    width: 40vw;
-    float: left;
-  }
-  
-  /* .uikit .sendbird-channel-header,
-  .uikit .sendbird-channel-list {
-    width: 100vw;
-  } */
-  
-  .uikit .sendbird-message-content.incoming .sendbird-message-content__middle,
-  .uikit .sendbird-message-content.outgoing .sendbird-message-content__middle {
-    max-width: calc(100% - 70px);
-  }
-  .uikit
-    .sendbird-message-content.outgoing
-    .sendbird-message-content__middle
-    .sendbird-message-content__middle__body-container,
-  .uikit
-    .sendbird-message-content.incoming
-    .sendbird-message-content__middle
-    .sendbird-message-content__middle__body-container {
-    width: 100%;
-  }
-  .uikit .sendbird-og-message-item-body {
-    min-width: initial;
-    max-width: initial;
-  }
-  
-  /* Channel list preview styles */
-  .channel-preview-w.uikiter {
-    max-width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: start;
-    padding: 20px;
-    border-bottom: 1px solid var(--sendbird-light-background-100);
-  }
-  .channel-preview-w.uikiter:hover,
-  .channel-preview-w.uikiter:active {
-    background-color: var(--sendbird-light-background-100);
-  }
-  .channel-preview-cover {
-    margin-inline-end: 10px;
-    border-radius: 50%;
-  }
-  .channel-preview-name {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  .channel-preview-last-message,
-  .channel-preview-last-message-date {
-    font-weight: 200;
-    color: var(--sendbird-dark-background-300);
-    font-size: 0.8em;
-  }
-  .channel-preview-last-message {
-    max-width: 170px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  .channel-preview-last-message-date {
-    margin-left: auto;
-    flex: 1;
-    text-align: end;
-  }
-  
-  /* Channel custom header styles */
-  .custom-channel-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    margin: 0;
-  }
-  .custom-channel-header button {
-    border: none;
-    background: transparent;
-  }
-  
-  .app-description {
-    margin: 12px;
-    width: 18vw;
-    float: left;
-    height: 100vh;
-  }
-  
-  /* Override Sendbird styles if not using custom channel list preview  */
-  /* .uikit .sendbird-channel-list,
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+.component-wrapper {
+  position: relative;
+  max-width: 1280px;
+  margin: auto;
+  height: 100vh;
+  width: 100vw;
+
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+  display: flex;
+  height: 90vh;
+  margin: 40px 0px;
+}
+
+.uikit .sb-channel-list {
+  width: 100%;
+  height: 100%;
+}
+
+.uikit .sb-conversation,
+.uikit .sb-channel-list {
+  width: 90%;
+  height: 90%;
+  padding-left: 5%;
+  padding-top: 5%
+}
+
+.sendbird-conversation,
+.sendbird-chat-header,
+.sb-channel-list,
+.sendbird-channel-list,
+.sendbird-channel-list__header,
+.sendbird-channel-header {
+  border-radius: 20px;
+}
+
+.sendbird-channel-list,
+.sendbird-channel-header {
+  width: 100% !important;
+}
+
+.sendbird-channel-list__body {
+  margin-top: 20%;
+}
+
+.uikit {
+  width: 40%;
+  /* height: 100vh; */
+  background: #6210cc;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.uikit .sendbird-message-content.incoming .sendbird-message-content__middle,
+.uikit .sendbird-message-content.outgoing .sendbird-message-content__middle {
+  max-width: calc(100% - 70px);
+}
+.uikit
+  .sendbird-message-content.outgoing
+  .sendbird-message-content__middle
+  .sendbird-message-content__middle__body-container,
+.uikit
+  .sendbird-message-content.incoming
+  .sendbird-message-content__middle
+  .sendbird-message-content__middle__body-container {
+  width: 100%;
+}
+.uikit .sendbird-og-message-item-body {
+  min-width: initial;
+  max-width: initial;
+}
+
+/* Channel list preview styles */
+.channel-preview-w.uikiter {
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: start;
+  padding: 20px;
+  border-bottom: 1px solid var(--sendbird-light-background-100);
+}
+.channel-preview-w.uikiter:hover,
+.channel-preview-w.uikiter:active {
+  background-color: var(--sendbird-light-background-100);
+}
+.channel-preview-cover {
+  margin-inline-end: 10px;
+  border-radius: 50%;
+}
+.channel-preview-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.channel-preview-last-message,
+.channel-preview-last-message-date {
+  font-weight: 200;
+  color: var(--sendbird-dark-background-300);
+  font-size: 0.8em;
+}
+.channel-preview-last-message {
+  max-width: 170px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.channel-preview-last-message-date {
+  margin-left: auto;
+  flex: 1;
+  text-align: end;
+}
+
+/* Channel custom header styles */
+.custom-channel-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0;
+}
+.custom-channel-header button {
+  border: none;
+  background: transparent;
+}
+
+.app-description {
+  width: 40%;
+  /* height: 100vh; */
+  padding-top: 5%;
+  padding-left: 10%;
+
+}
+
+.app-description h3 {
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -0.2px;
+  font-weight: 700;
+  font-family: "Gellix", sans-serif;
+  color: #0d0d0d;
+  margin-top: 0px;
+  margin-bottom: 24px;
+  text-rendering: optimizeLegibility;
+}
+
+.app-description p {
+  font-size: 18px;
+  line-height: 28px;
+  overflow-wrap: break-word;
+  letter-spacing: -0.2px;
+  font-weight: 400;
+  color: #424242;
+  text-rendering: optimizeLegibility;
+  margin-bottom: 1.125em !important;
+}
+
+.inbox-bullet {
+  padding: 12px 0;
+}
+
+.bullet-icon {
+  width: 44px;
+  margin-right: 16px;
+  display: inline-block;
+}
+
+.h7 {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+  font-weight: 600;
+  margin-block: 0px;
+  margin: 0px;
+  display: inline-block;
+}
+
+.inbox-bullet .example-description {
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+  font-weight: 500;
+  margin-block: 6px;
+  margin-top: 0px;
+  margin-left: 60px;
+}
+
+.inbox-bullet .send-example-message-button {
+  font-size: 12px;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  margin-left: 60px;
+  border: 1px solid white;
+  background-color: rgb(232, 232, 232);
+  color: #424242;
+  border-radius: 10px;
+  padding: 0px 10px;
+}
+
+.bullet-icon img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+}
+
+.sendbird-channel-list__body {
+  margin-top: 18px;
+}
+
+.channel-preview-wrapper {
+  padding: 10px 16px;
+}
+
+.channel-preview-wrapper .channel-preview-cover {
+  display: inline-block;
+}
+
+.channel-preview-wrapper div {
+  display: inline-block;
+  width: 50%;
+}
+.channel-preview-name {
+  margin-right: 10%;
+}
+
+.channel-preview-last-message {
+  display: flex;
+}
+
+.channel-preview-last-message-date {
+  width: 10% !important;
+  display: flex;
+  float: right;
+  margin-top: 5px;
+}
+
+.sendbird-channel-header__title__right__name.sendbird-label.sendbird-label--subtitle-2.sendbird-label--color-onbackground-1 {
+  padding: 10px 0px;
+}
+.sendbird-channel-header__title__right__user-id.sendbird-label.sendbird-label--body-2.sendbird-label--color-onbackground-2 {
+  display: none;
+}
+
+/* Override Sendbird styles if not using custom channel list preview  */
+/* .uikit .sendbird-channel-list,
   .uikit .sendbird-channel-header,
   .uikit
     .sendbird-channel-list
@@ -190,4 +314,3 @@
     .sendbird-channel-preview__content__upper__last-message-at {
     display: block;
   } */
-  
