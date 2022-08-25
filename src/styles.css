@@ -30,7 +30,7 @@ button {
   margin: auto;
   height: 100%;
   width: 100%;
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 
 .flex-wrap {
@@ -76,8 +76,8 @@ button {
   width: 100% !important;
 }
 
-.sendbird-conversation__messages .sendbird-conversation__messages-padding{
-  height: 648px!important;
+.sendbird-conversation__messages .sendbird-conversation__messages-padding {
+  height: 648px !important;
 }
 
 .sendbird-channel-list__body {
@@ -161,7 +161,6 @@ button {
   width: 50%;
   float: left;
   height: 840px;
-  padding-top: 50px;
   padding-left: 20%;
   margin-left: 400px;
 }
@@ -186,16 +185,16 @@ button {
   font-weight: 400;
   color: #424242;
   text-rendering: optimizeLegibility;
-  margin-bottom: 1.125em !important;
+  /* margin-bottom: 1.125em !important; */
 }
 
 .inbox-bullet {
   padding: 12px 0;
 }
 
-.inbox-bullets{
-display: inline-block;
-height: 100%;
+.inbox-bullets {
+  display: inline-block;
+  height: 100%;
 }
 
 .bullet-icon {
@@ -286,28 +285,46 @@ height: 100%;
   display: none;
 }
 
-.fa.fa-github{
+.fa.fa-github {
   font-size: 30px;
   margin-left: 10px;
   color: black;
 }
 
-.sendbird-chat-header__left{
-  margin-left:20px;
+.sendbird-chat-header__left {
+  margin-left: 20px;
 }
 
-.back-button{
+.back-button {
   position: absolute;
-    z-index: 9;
-    top: 60px;
-    left: 48px;
-    border: none;
-    background: transparent;
+  z-index: 9;
+  top: 60px;
+  left: 48px;
+  border: none;
+  background: transparent;
 }
 
-.sendbird-conversation__messages-padding{
+.sendbird-conversation__messages-padding {
   overflow-y: scroll !important;
-overflow-x: hidden !important;
+  overflow-x: hidden !important;
+}
+
+.links-container {
+  margin-bottom: 1.125em;
+}
+
+.link {
+  margin-right: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  text-decoration: none;
+  line-height: 28px;
+  overflow-wrap: break-word;
+  letter-spacing: -0.2px;
+  font-weight: 600;
+  color: #6210cc;
+  text-rendering: optimizeLegibility;
 }
 /* Override Sendbird styles if not using custom channel list preview  */
 /* .uikit .sendbird-channel-list,

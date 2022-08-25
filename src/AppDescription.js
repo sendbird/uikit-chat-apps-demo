@@ -10,7 +10,36 @@ function AppDescription({ reset, start }) {
       <p>
         Users wouldn’t leave your app if they didn’t have to. Why send them
         hunting across SMS, email, and messenger apps to track down messages?
+        The rich experience cards seen here are sent by a server process,
+        usually connected to a customers backend, and use a simple markdown
+        design
       </p>
+      <div className="links-container">
+        <a
+          href="https://www.notion.so/UIKit-App-Platform-e8eb9cc257b94319aa3b04f28ad11b38"
+          target="_blank"
+          rel="noreferrer"
+          className="link"
+        >
+          Design document
+        </a>
+        <a
+          href="https://www.notion.so/sendbird/Sendbird-UIKit-Chat-App-Simple-Tutorial-91a3b1b4d2374a239cf61fb7bf67f3cb"
+          target="_blank"
+          rel="noreferrer"
+          className="link"
+        >
+          Tutorial
+        </a>
+        <a
+          href="https://github.com/sendbird/sendbird-uikit-app-samples"
+          target="_blank"
+          rel="noreferrer"
+          className="link"
+        >
+          Sample code
+        </a>
+      </div>
       <div className="inbox-bullets">
         <div
           className="inbox-bullet"
