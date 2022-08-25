@@ -28,7 +28,7 @@ function AppDescription({ reset, start }) {
           </div>
           <h5 class="h7">Marketing promotions</h5>
           <h6 className="example-description">
-            Information about marketing promotion example
+            Send a 20% discount promotion to the customer
           </h6>
           <button
             className="send-example-message-button"
@@ -57,7 +57,7 @@ function AppDescription({ reset, start }) {
           </div>
           <h5 class="h7">Sales conversations</h5>
           <h6 className="example-description">
-            Information about sales example
+            Share a product recommendation with the customer
           </h6>
           <button
             className="send-example-message-button"
@@ -121,7 +121,7 @@ function AppDescription({ reset, start }) {
           </div>
           <h5 class="h7">Order Tracking</h5>
           <h6 className="example-description">
-            Information about order tracking example
+            Trigger a Sushi delivery notification
           </h6>
           <button
             className="send-example-message-button"
@@ -153,7 +153,7 @@ function AppDescription({ reset, start }) {
           </div>
           <h5 class="h7">Marketplace</h5>
           <h6 className="example-description">
-            Information about marketplace example
+            Share a product detail card with the customer
           </h6>
           <button
             className="send-example-message-button"
