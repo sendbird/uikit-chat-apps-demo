@@ -306,7 +306,7 @@ height: 100%;
 }
 
 .sendbird-conversation__messages-padding{
-  overflow-y: hidden !important;
+  overflow-y: scroll !important;
 overflow-x: hidden !important;
 }
 /* Override Sendbird styles if not using custom channel list preview  */
