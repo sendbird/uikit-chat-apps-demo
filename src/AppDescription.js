@@ -12,7 +12,7 @@ function AppDescription({ reset, start }) {
         hunting across SMS, email, and messenger apps to track down messages?
       </p>
       <div className="inbox-bullets">
-        {/* <div
+        <div
           className="inbox-bullet"
           onClick={() => {
             start("https://chatsamples.com/promotion/start", "promotion");
@@ -45,7 +45,7 @@ function AppDescription({ reset, start }) {
           >
             <i class="fa fa-github"></i>
           </a>
-        </div> */}
+        </div>
         <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
@@ -78,7 +78,7 @@ function AppDescription({ reset, start }) {
             <i class="fa fa-github"></i>
           </a>
         </div>
-        <div className="inbox-bullet">
+        {/* <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-customer-support.png"
@@ -109,7 +109,7 @@ function AppDescription({ reset, start }) {
           >
             <i class="fa fa-github"></i>
           </a>
-        </div>
+        </div> */}
         <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
@@ -142,7 +142,7 @@ function AppDescription({ reset, start }) {
             <i class="fa fa-github"></i>
           </a>
         </div>
-        <div className="inbox-bullet">
+        {/* <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-community-conversations@2x.png"
@@ -170,7 +170,7 @@ function AppDescription({ reset, start }) {
           >
             <i class="fa fa-github"></i>
           </a>
-        </div>
+        </div> */}
         <div className="inbox-bullet" onClick={reset}>
           <div className="bullet-icon">
             <img
