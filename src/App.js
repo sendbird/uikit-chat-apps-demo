@@ -4,7 +4,7 @@ import "./styles.css";
 import CustomizedApp from "./CustomizedApp";
 import Sendbird from "./setupUser";
 import AppDescription from "./AppDescription";
-
+import { APP_ID, NICKNAME } from './constants';
 const appManifests = [
   {
     "name": "basic-chat-app",
@@ -38,9 +38,7 @@ export default function App() {
   const [user, setUser] = React.useState();
   const [channelUrls, setChannelUrls] = React.useState({});
   const [isLoading, setIsLoading] = React.useState(true);
-  let APP_ID = process.env.REACT_APP_APP_ID;
-  let NICKNAME = process.env.REACT_APP_NICKNAME;
-  const sendbird = new Sendbird(process.env.REACT_APP_APP_ID);
+  const sendbird = new Sendbird(APP_ID);
 
   React.useEffect(() => {
     const setup = async () => {
@@ -111,7 +109,7 @@ export default function App() {
     // need SB Provider at top level so all of app has access to sendbird data
     <div className="component-wrapper">
       <div className="flex-wrap">
-        <SBProvider appId={APP_ID} userId={user.userId} nickname={NICKNAME}>
+        <SBProvider config={{ appManifests }} appId={APP_ID} userId={user.userId} nickname={NICKNAME}>
           <CustomizedApp userId={user.userId} />
           <AppDescription reset={reset} start={start} />
         </SBProvider>

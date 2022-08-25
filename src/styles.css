@@ -76,6 +76,10 @@ button {
   width: 100% !important;
 }
 
+.sendbird-conversation__messages .sendbird-conversation__messages-padding{
+  height: 648px!important;
+}
+
 .sendbird-channel-list__body {
   margin-top: 20%;
 }
@@ -286,6 +290,19 @@ height: 100%;
   font-size: 30px;
   margin-left: 10px;
   color: black;
+}
+
+.sendbird-chat-header__left{
+  margin-left:20px;
+}
+
+.back-button{
+  position: absolute;
+    z-index: 9;
+    top: 60px;
+    left: 48px;
+    border: none;
+    background: transparent;
 }
 
 /* Override Sendbird styles if not using custom channel list preview  */
