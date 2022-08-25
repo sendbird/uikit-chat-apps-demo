@@ -305,6 +305,10 @@ height: 100%;
     background: transparent;
 }
 
+.sendbird-conversation__messages-padding{
+  overflow-y: hidden !important;
+overflow-x: hidden !important;
+}
 /* Override Sendbird styles if not using custom channel list preview  */
 /* .uikit .sendbird-channel-list,
   .uikit .sendbird-channel-header,
