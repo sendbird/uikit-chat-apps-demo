@@ -12,7 +12,7 @@ function AppDescription({ reset, start }) {
         hunting across SMS, email, and messenger apps to track down messages?
       </p>
       <div className="inbox-bullets">
-        <div
+        {/* <div
           className="inbox-bullet"
           onClick={() => {
             start("https://chatsamples.com/promotion/start", "promotion");
@@ -45,7 +45,7 @@ function AppDescription({ reset, start }) {
           >
             <i class="fa fa-github"></i>
           </a>
-        </div>
+        </div> */}
         <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
