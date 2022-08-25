@@ -38,6 +38,13 @@ function AppDescription({ reset, start }) {
           >
             Click to send marketing promotion message
           </button>
+          <a
+            href="https://github.com/sendbird/sendbird-uikit-app-samples/blob/main/promotion/sendbird.js"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa fa-github"></i>
+          </a>
         </div>
         <div className="inbox-bullet">
           <div className="bullet-icon">
@@ -63,6 +70,13 @@ function AppDescription({ reset, start }) {
           >
             Click to send sales message
           </button>
+          <a
+            href="https://github.com/sendbird/sendbird-uikit-app-samples/blob/main/sales-concierge/sendbird.js"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa fa-github"></i>
+          </a>
         </div>
         <div className="inbox-bullet">
           <div className="bullet-icon">
@@ -88,6 +102,13 @@ function AppDescription({ reset, start }) {
           >
             Click to send customer support message
           </button>
+          <a
+            href="https://github.com/sendbird/sendbird-uikit-app-samples/blob/main/support-agent/sendbird.js"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa fa-github"></i>
+          </a>
         </div>
         <div className="inbox-bullet">
           <div className="bullet-icon">
@@ -113,6 +134,13 @@ function AppDescription({ reset, start }) {
           >
             Click to send order tracking message
           </button>
+          <a
+            href="https://github.com/sendbird/sendbird-uikit-app-samples/blob/main/order-tracking/sendbird.js"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa fa-github"></i>
+          </a>
         </div>
         <div className="inbox-bullet">
           <div className="bullet-icon">
@@ -135,8 +163,14 @@ function AppDescription({ reset, start }) {
           >
             Click to send marketplace message
           </button>
+          <a
+            href="https://github.com/sendbird/sendbird-uikit-app-samples/blob/main/marketplace/sendbird.js"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa fa-github"></i>
+          </a>
         </div>
-
         <div className="inbox-bullet" onClick={reset}>
           <div className="bullet-icon">
             <img

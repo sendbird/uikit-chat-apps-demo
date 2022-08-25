@@ -30,11 +30,23 @@ button {
   margin: auto;
   height: 100%;
   width: 100%;
+  overflow-y: auto;
 }
 
 .flex-wrap {
   height: 80%;
-  margin: 40px 0px;
+  margin: 30px 0px;
+}
+
+.uikit {
+  width: 400px;
+  height: 800px;
+  float: left;
+  background: #6210cc;
+  border-radius: 15px;
+  padding: 40px;
+  position: fixed;
+  margin-left: 5%;
 }
 
 .uikit .sb-channel-list {
@@ -44,10 +56,10 @@ button {
 
 .uikit .sb-conversation,
 .uikit .sb-channel-list {
-  width: 400px;
-  height: 90%;
-  padding-left: 10%;
-  padding-top: 5%;
+  /* width: 400px; */
+  /* height: 90%; */
+  /* padding-left: 10%;
+  padding-top: 5%; */
 }
 
 .sendbird-conversation,
@@ -66,15 +78,6 @@ button {
 
 .sendbird-channel-list__body {
   margin-top: 20%;
-}
-
-.uikit {
-  width: 40%;
-  height: 800px;
-  float: left;
-  background: #6210cc;
-  border-radius: 15px;
-  padding: 20px;
 }
 
 .uikit .sendbird-message-content.incoming .sendbird-message-content__middle,
@@ -151,11 +154,12 @@ button {
 }
 
 .app-description {
-  width: 40%;
+  width: 50%;
   float: left;
-  height: 800px;
-  overflow-y: auto;
-  padding-left: 10%;
+  height: 840px;
+  /* overflow-y: auto; */
+  padding-left: 20%;
+  margin-left: 400px;
 }
 
 .app-description h3 {
@@ -276,6 +280,12 @@ height: 100%;
 }
 .sendbird-channel-header__title__right__user-id.sendbird-label.sendbird-label--body-2.sendbird-label--color-onbackground-2 {
   display: none;
+}
+
+.fa.fa-github{
+  font-size: 30px;
+  margin-left: 10px;
+  color: black;
 }
 
 /* Override Sendbird styles if not using custom channel list preview  */
