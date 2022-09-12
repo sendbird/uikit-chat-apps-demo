@@ -8,8 +8,38 @@ function AppDescription({ reset, start }) {
     <div className="app-description">
       <h3 class="h3">Rich Interactive Messages</h3>
       <p>
-        Enhancing the chat experience.
+        Users wouldn’t leave your app if they didn’t have to. Why send them
+        hunting across SMS, email, and messenger apps to track down messages?
+        The rich experience cards seen here are sent by a server process,
+        usually connected to a customers backend, and use a simple markdown
+        design
       </p>
+      <div className="links-container">
+        <a
+          href="https://www.notion.so/UIKit-App-Platform-e8eb9cc257b94319aa3b04f28ad11b38"
+          target="_blank"
+          rel="noreferrer"
+          className="link"
+        >
+          Design document
+        </a>
+        <a
+          href="https://www.notion.so/sendbird/Sendbird-UIKit-Chat-App-Simple-Tutorial-91a3b1b4d2374a239cf61fb7bf67f3cb"
+          target="_blank"
+          rel="noreferrer"
+          className="link"
+        >
+          Tutorial
+        </a>
+        <a
+          href="https://github.com/sendbird/sendbird-uikit-app-samples"
+          target="_blank"
+          rel="noreferrer"
+          className="link"
+        >
+          Sample code
+        </a>
+      </div>
       <div className="inbox-bullets">
         <div
           className="inbox-bullet"
@@ -27,7 +57,7 @@ function AppDescription({ reset, start }) {
           </div>
           <h5 class="h7">Marketing promotions</h5>
           <h6 className="example-description">
-            Information about marketing promotion example
+            Send a 20% discount promotion to the customer
           </h6>
           <button
             className="send-example-message-button"
@@ -56,7 +86,7 @@ function AppDescription({ reset, start }) {
           </div>
           <h5 class="h7">Sales conversations</h5>
           <h6 className="example-description">
-            Information about sales example
+            Share a product recommendation with the customer
           </h6>
           <button
             className="send-example-message-button"
@@ -77,7 +107,7 @@ function AppDescription({ reset, start }) {
             <i class="fa fa-github"></i>
           </a>
         </div>
-        <div className="inbox-bullet">
+        {/* <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-customer-support.png"
@@ -108,7 +138,7 @@ function AppDescription({ reset, start }) {
           >
             <i class="fa fa-github"></i>
           </a>
-        </div>
+        </div> */}
         <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
@@ -120,7 +150,7 @@ function AppDescription({ reset, start }) {
           </div>
           <h5 class="h7">Order Tracking</h5>
           <h6 className="example-description">
-            Information about order tracking example
+            Trigger a Sushi delivery notification
           </h6>
           <button
             className="send-example-message-button"
@@ -141,7 +171,7 @@ function AppDescription({ reset, start }) {
             <i class="fa fa-github"></i>
           </a>
         </div>
-        <div className="inbox-bullet">
+        {/* <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-community-conversations@2x.png"
@@ -152,7 +182,7 @@ function AppDescription({ reset, start }) {
           </div>
           <h5 class="h7">Marketplace</h5>
           <h6 className="example-description">
-            Information about marketplace example
+            Share a product detail card with the customer
           </h6>
           <button
             className="send-example-message-button"
@@ -169,7 +199,7 @@ function AppDescription({ reset, start }) {
           >
             <i class="fa fa-github"></i>
           </a>
-        </div>
+        </div> */}
         <div className="inbox-bullet" onClick={reset}>
           <div className="bullet-icon">
             <img
