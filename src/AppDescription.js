@@ -8,11 +8,7 @@ function AppDescription({ reset, start }) {
     <div className="app-description">
       <h3 class="h3">Rich Interactive Messages</h3>
       <p>
-        Users wouldn’t leave your app if they didn’t have to. Why send them
-        hunting across SMS, email, and messenger apps to track down messages?
-        The rich experience cards seen here are sent by a server process,
-        usually connected to a customers backend, and use a simple markdown
-        design
+        A selection of rich app experiences for UIKit. Built with the app platform.
       </p>
       <div className="links-container">
         <a

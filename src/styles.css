@@ -51,6 +51,7 @@ button {
 
 .uikit .sb-conversation,
 .uikit .sb-channel-list {
+  height: 100%;
   /* width: 400px; */
   /* height: 90%; */
   /* padding-left: 10%;
