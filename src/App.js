@@ -107,13 +107,17 @@ export default function App() {
 
   return (
     // need SB Provider at top level so all of app has access to sendbird data
-    <div className="component-wrapper">
-      <div className="flex-wrap">
-        <SBProvider config={{ appManifests }} appId={APP_ID} userId={user.userId} nickname={NICKNAME}>
+    <SBProvider config={{ appManifests }} appId={APP_ID} userId={user.userId} nickname={NICKNAME}>
+      <div className="container">
+        <div className="uikit-container">
           <CustomizedApp userId={user.userId} />
+        </div>
+
+        <div className="controls-container">
           <AppDescription reset={reset} start={start} />
-        </SBProvider>
+        </div>
       </div>
-    </div>
+
+    </SBProvider>
   );
 }

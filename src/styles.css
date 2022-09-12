@@ -39,14 +39,9 @@ button {
 }
 
 .uikit {
-  width: 400px;
   height: 800px;
-  float: left;
-  background: #6210cc;
-  border-radius: 15px;
-  padding: 40px;
-  position: fixed;
-  margin-left: 5%;
+  max-width:400px;
+
 }
 
 .uikit .sb-channel-list {
@@ -158,12 +153,8 @@ button {
 }
 
 .app-description {
-  width: 50%;
-  float: left;
   height: 840px;
-  /* overflow-y: auto; */
-  padding-left: 20%;
-  margin-left: 400px;
+  overflow-y: auto;
 }
 
 .app-description h3 {
@@ -298,11 +289,10 @@ height: 100%;
 
 .back-button{
   position: absolute;
-    z-index: 9;
-    top: 60px;
-    left: 48px;
-    border: none;
-    background: transparent;
+  z-index: 9;
+  top: 88px;
+  border: none;
+  background: transparent;
 }
 
 /* Override Sendbird styles if not using custom channel list preview  */
@@ -344,3 +334,20 @@ height: 100%;
     .sendbird-channel-preview__content__upper__last-message-at {
     display: block;
   } */
+.container{
+  display: flex;
+}
+.uikit-container{
+  flex:1;
+  background: #6210cc;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100vh;
+
+}
+
+.controls-container{
+  flex:1;
+  padding:40px;
+}

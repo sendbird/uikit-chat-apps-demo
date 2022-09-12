@@ -6,10 +6,9 @@ import "@sendbird/uikit-react/dist/index.css";
 function AppDescription({ reset, start }) {
   return (
     <div className="app-description">
-      <h3 class="h3">A unified experience</h3>
+      <h3 class="h3">Rich Interactive Messages</h3>
       <p>
-        Users wouldn’t leave your app if they didn’t have to. Why send them
-        hunting across SMS, email, and messenger apps to track down messages?
+        Enhancing the chat experience.
       </p>
       <div className="inbox-bullets">
         <div
