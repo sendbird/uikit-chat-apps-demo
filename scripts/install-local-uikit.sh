@@ -1,6 +1,7 @@
 echo "working";
 # change this to be where you have the UIKit source code. You will neen to build that code with npm run build.
 UIKIT_LOCATION=/Users/jamesrobertson/Code/sendbird-uikit-react
+rm -fr node_modules
 npm install
 APP_LOCATION=$(pwd)
 echo $APP_LOCATION
