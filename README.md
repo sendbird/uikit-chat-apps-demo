@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+### Install modifed version of UIkit
+For this demo to work we needs to replace the uikit code in node_modules/@sendbird/uikit-react with the built code from this branch https://github.com/sendbird/sendbird-uikit-react/tree/uikit-apps. There are two teps to this process.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##### 1. Build UIKit
+Pull down UIKit and switch to the branch uikit-apps
+There is an issue with the markdown rendering library that means an error is currently thrown when runinng in the browser.
 
-## Available Scripts
+The fix is to modify the problem dependacy in the node_modules of uikit. Do this by editing this file sendbird-uikit-react/node_modules/react-markdown/node_modules/vfile/lib/index.js to remove the dependacy on the miniproc.js file. 
 
-In the project directory, you can run:
+If you comment out the line 
+```import {proc} from './minproc.js'```
 
-### `npm start`
+and add in the line 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```const proc = { cwd: () => { } }```
+ 
+That will fix the issue.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Warning that if this dependancy changes this exect fix may not work.
 
-### `npm test`
+##### 2. Install local UIKit
+This can be easily done by running the install-local-uikit.sh script in the repo. Must be ran from root of the project like so ```./scripts/install-local-uikit.sh```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Remember to update UIKIT_LOCATION to the location of the uikit repo on your machine.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
