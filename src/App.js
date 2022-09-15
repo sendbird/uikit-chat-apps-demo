@@ -30,6 +30,11 @@ const appManifests = [
     "name": "concierge",
     // "url": "http://localhost:8287/app",
     "url": "https://chatsamples.com/sales-concierge/app"
+  },
+  {
+    "name": "support-agent",
+    // "url": "http://localhost:8287/app",
+    "url": "https://chatsamples.com/support-agent/app"
   }
 ];
 

@@ -95,7 +95,7 @@ function AppDescription({ reset, start }) {
             <i class="fa fa-github"></i>
           </a>
         </div>
-        {/* <div className="inbox-bullet">
+        <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-customer-support.png"
@@ -106,7 +106,7 @@ function AppDescription({ reset, start }) {
           </div>
           <h5 class="h7">Customer support</h5>
           <h6 className="example-description">
-            Information about customer support example
+            Chat with a customer support agent
           </h6>
           <button
             className="send-example-message-button"
@@ -126,7 +126,7 @@ function AppDescription({ reset, start }) {
           >
             <i class="fa fa-github"></i>
           </a>
-        </div> */}
+        </div>
         <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
