@@ -25,6 +25,7 @@ steptacular([
     {
         name: 'Pull down latest code onto production server',
         run: async ({ utils: { prompt }, next }) => {
+            console.log('You will need access to the chatsample server. Chris Chabot can give access.')
             await $`ssh dev "cd /home/ubuntu/uikit-chat-apps-demo && git pull origin main"`;
 
             prompt('Press enter to continue');
@@ -32,10 +33,12 @@ steptacular([
         }
     },
     {
-        name: 'install latest uikit',
+        name: 'Install latest uikit',
         run: async ({ utils: { prompt }, next }) => {
             console.log('Getting latest version of the markdown enabled UIKit and installing into this app.');
-            await $`ssh dev "cd /home/ubuntu/uikit-chat-apps-demo && /home/ubuntu/sendbird-uikit-react"`;
+            prompt('First ensure any updtes you need in UIKit have been pushed to the UIKit uikit-apps branch');
+
+            await $`ssh dev "cd /home/ubuntu/uikit-chat-apps-demo && ./scripts/install-local-uikit.sh  /home/ubuntu/sendbird-uikit-react"`;
 
             prompt('Press enter to continue');
             next();
@@ -56,6 +59,14 @@ steptacular([
             console.log('No work to do this will be automatic');
 
             await $`ssh dev "cd /home/ubuntu/uikit-chat-apps-demo && cp -r build/ /var/www/html/chat-apps-demo/"`;
+
+            prompt('Press enter to continue');
+            next();
+        }
+    }, {
+        name: 'Test on live',
+        run: async ({ utils: { prompt }, next }) => {
+            console.log('Its worth a quick test of https://chatsamples.com/chat-app-samples/ to ensure ether looks correct');
 
             prompt('All done! Press enter to finish');
             next();
