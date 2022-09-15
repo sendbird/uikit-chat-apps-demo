@@ -25,8 +25,17 @@ steptacular([
     {
         name: 'Pull down latest code onto production server',
         run: async ({ utils: { prompt }, next }) => {
-            console.log('No work to do this will be automatic');
             await $`ssh dev "cd /home/ubuntu/uikit-chat-apps-demo && git pull origin main"`;
+
+            prompt('Press enter to continue');
+            next();
+        }
+    },
+    {
+        name: 'install latest uikit',
+        run: async ({ utils: { prompt }, next }) => {
+            console.log('Getting latest version of the markdown enabled UIKit and installing into this app.');
+            await $`ssh dev "cd /home/ubuntu/uikit-chat-apps-demo && /home/ubuntu/sendbird-uikit-react"`;
 
             prompt('Press enter to continue');
             next();
@@ -35,7 +44,6 @@ steptacular([
     {
         name: 'Build latest client on production server',
         run: async ({ utils: { prompt }, next }) => {
-            console.log('No work to do this will be automatic');
 
             await $`ssh dev "cd /home/ubuntu/uikit-chat-apps-demo && npm run build"`;
             console.log('If you want to check the built code before pushing live it is available in /build');
