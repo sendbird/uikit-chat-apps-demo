@@ -95,7 +95,7 @@ function AppDescription({ reset, start }) {
             <i class="fa fa-github"></i>
           </a>
         </div>
-        {/* <div className="inbox-bullet">
+        <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-customer-support.png"
@@ -128,7 +128,7 @@ function AppDescription({ reset, start }) {
           >
             <i class="fa fa-github"></i>
           </a>
-        </div> */}
+        </div>
         <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
@@ -155,6 +155,102 @@ function AppDescription({ reset, start }) {
           </button>
           <a
             href="https://github.com/sendbird/sendbird-uikit-app-samples/blob/main/order-tracking/sendbird.js"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa fa-github"></i>
+          </a>
+        </div>
+        <div className="inbox-bullet">
+          <div className="bullet-icon">
+            <img
+              src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-notifications.png"
+              class="lazyloaded"
+              data-was-processed="true"
+              alt="order-updates-icon"
+            />
+          </div>
+          <h5 class="h7">Calendar Appointment</h5>
+          <h6 className="example-description">
+            Trigger a calendar notification
+          </h6>
+          <button
+            className="send-example-message-button"
+            onClick={() => {
+              start(
+                "https://chatsamples.com/calendar-appointment/start",
+                "calendar-appointment"
+              );
+            }}
+          >
+            Click to send calendar appointment success message
+          </button>
+          <a
+            href="https://github.com/sendbird/sendbird-uikit-app-samples/blob/main/calendar-appointment/sendbird.js"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa fa-github"></i>
+          </a>
+        </div>
+        <div className="inbox-bullet">
+          <div className="bullet-icon">
+            <img
+              src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-notifications.png"
+              class="lazyloaded"
+              data-was-processed="true"
+              alt="order-updates-icon"
+            />
+          </div>
+          <h5 class="h7">Movie Tickets</h5>
+          <h6 className="example-description">
+            Trigger a movie ticket notification
+          </h6>
+          <button
+            className="send-example-message-button"
+            onClick={() => {
+              start(
+                "https://chatsamples.com/movie-tickets/start",
+                "movie-tickets"
+              );
+            }}
+          >
+            Click to send movie ticket confirmation message
+          </button>
+          <a
+            href="https://github.com/sendbird/sendbird-uikit-app-samples/blob/main/movie-tickets/sendbird.js"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa fa-github"></i>
+          </a>
+        </div>
+        <div className="inbox-bullet">
+          <div className="bullet-icon">
+            <img
+              src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-notifications.png"
+              class="lazyloaded"
+              data-was-processed="true"
+              alt="order-updates-icon"
+            />
+          </div>
+          <h5 class="h7">Purchase Receipt</h5>
+          <h6 className="example-description">
+            Send a purchase notification
+          </h6>
+          <button
+            className="send-example-message-button"
+            onClick={() => {
+              start(
+                "https://chatsamples.com/purchase-receipt/start",
+                "purchase-receipt"
+              );
+            }}
+          >
+            Click to send purchase receipt message
+          </button>
+          <a
+            href="https://github.com/sendbird/sendbird-uikit-app-samples/blob/main/purchase-receipt/sendbird.js"
             target="_blank"
             rel="noreferrer"
           >
