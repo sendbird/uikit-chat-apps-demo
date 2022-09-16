@@ -35,25 +35,25 @@ const appManifests = [
     "name": "support-agent",
     // "url": "http://localhost:8287/app",
     // "url": "https://chatsamples.com/support-agent/app"
-    "url": "https://localhost:8289/app"
+    "url": "http://localhost:8289/app"
   },
   {
     "name": "calendar-appointment",
     // "url": "http://localhost:8287/app",
     // "url": "https://chatsamples.com/support-agent/app"
-    "url": "https://localhost:8286/app"
+    "url": "http://localhost:8286/app"
   },
   {
     "name": "movie-tickets",
     // "url": "http://localhost:8287/app",
     // "url": "https://chatsamples.com/support-agent/app"
-    "url": "https://localhost:8286/app"
+    "url": "http://localhost:8286/app"
   },
   {
     "name": "purchase-receipt",
     // "url": "http://localhost:8287/app",
     // "url": "https://chatsamples.com/support-agent/app"
-    "url": "https://localhost:8286/app"
+    "url": "http://localhost:8286/app"
   } 
 ];
 
