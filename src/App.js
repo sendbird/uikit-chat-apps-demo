@@ -24,7 +24,7 @@ const appManifests = [
   },
   {
     "name": "order-tracking",
-    "url": "http://localhost:8286/app"
+    "url": "https://chatsamples.com/order-tracking/app"
   },
   {
     "name": "concierge",

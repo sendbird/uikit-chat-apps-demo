@@ -12,15 +12,7 @@ function AppDescription({ reset, start }) {
       </p>
       <div className="links-container">
         <a
-          href="https://www.notion.so/UIKit-App-Platform-e8eb9cc257b94319aa3b04f28ad11b38"
-          target="_blank"
-          rel="noreferrer"
-          className="link"
-        >
-          Design document
-        </a>
-        <a
-          href="https://www.notion.so/sendbird/Sendbird-UIKit-Chat-App-Simple-Tutorial-91a3b1b4d2374a239cf61fb7bf67f3cb"
+          href="https://docs.google.com/document/d/1aS7iOJy0rg0HuXsNHGyTWSQqPgrswErokS0BhRI12E4/edit"
           target="_blank"
           rel="noreferrer"
           className="link"
@@ -103,7 +95,7 @@ function AppDescription({ reset, start }) {
             <i class="fa fa-github"></i>
           </a>
         </div>
-        <div className="inbox-bullet">
+        {/* <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-customer-support.png"
@@ -136,7 +128,7 @@ function AppDescription({ reset, start }) {
           >
             <i class="fa fa-github"></i>
           </a>
-        </div>
+        </div> */}
         <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
