@@ -34,8 +34,9 @@ const appManifests = [
   {
     "name": "support-agent",
     // "url": "http://localhost:8287/app",
-    "url": "https://chatsamples.com/support-agent/app"
-  }
+    // "url": "https://chatsamples.com/support-agent/app"
+    "url": "https://localhost:8289/app"
+  } 
 ];
 
 export default function App() {
@@ -95,8 +96,6 @@ export default function App() {
   };
 
   const start = (url, name) => {
-    console.log("channel=", channelUrls);
-
     fetch(url, {
       method: "POST",
       headers: {

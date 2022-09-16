@@ -120,7 +120,9 @@ function AppDescription({ reset, start }) {
             className="send-example-message-button"
             onClick={() => {
               start(
-                "https://chatsamples.com/support-agent/start",
+                // "https://chatsamples.com/support-agent/start",
+                //"http://localhost:8289/support-agent/start",
+                "http://localhost:8289/start",
                 "support-agent"
               );
             }}
