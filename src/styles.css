@@ -49,6 +49,7 @@ button {
   height: 100%;
 }
 
+
 .uikit .sb-conversation,
 .uikit .sb-channel-list {
   height: 100%;
@@ -294,8 +295,9 @@ button {
 .back-button {
   position: absolute;
   z-index: 9;
-  top: 60px;
-  left: 48px;
+  margin-top: 20px;
+  /* top: 10%;
+  left: 20%; */
   border: none;
   background: transparent;
 }
