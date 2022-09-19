@@ -23,9 +23,9 @@ class Sendbird {
             const supportChannel = await this.sb.groupChannel.getChannel(`Support-${userId}`);
             const trackingChannel = await this.sb.groupChannel.getChannel(`Tracking-${userId}`);
             const marketplaceChannel = await this.sb.groupChannel.getChannel(`Marketplace-${userId}`);
+            // const calendarChannel = await this.sb.groupChannel.getChannel(`Calendar-${userId}`);
 
-
-            return [user, promotionsChannel, conciergeChannel, supportChannel, trackingChannel, marketplaceChannel];
+            return [user, promotionsChannel, conciergeChannel, supportChannel, trackingChannel, marketplaceChannel, ];
         } else {
             const newUserId = uuidv4();
             const user = await this.sb.connect(newUserId);
@@ -35,11 +35,11 @@ class Sendbird {
             const supportChannel = await this.createChannel("Support", newUserId, user);
             const trackingChannel = await this.createChannel("Tracking", newUserId, user);
             const marketplaceChannel = await this.createChannel("Marketplace", newUserId, user);
-
+            // const calendarChannel =  await this.createChannel("Calendar", newUserId, user);
 
             localStorage.setItem('sb-user-id', user.userId);
 
-            return [user, promotionsChannel, conciergeChannel, supportChannel, trackingChannel, marketplaceChannel];
+            return [user, promotionsChannel, conciergeChannel, supportChannel, trackingChannel, marketplaceChannel, ];
 
         }
     }

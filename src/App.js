@@ -41,7 +41,7 @@ const appManifests = [
     "name": "calendar-appointment",
     // "url": "http://localhost:8287/app",
     // "url": "https://chatsamples.com/support-agent/app"
-    "url": "http://localhost:8286/app"
+    "url": "http://localhost:8281/app"
   },
   {
     "name": "movie-tickets",
@@ -75,6 +75,7 @@ export default function App() {
         supportChannel,
         trackingChannel,
         marketplaceChannel,
+        // calendarChannel
       ] = await sendbird.setUp();
       console.log(promotionsChannel);
       setUser(user);
@@ -84,6 +85,7 @@ export default function App() {
         "support-agent": supportChannel.url,
         "order-tracking": trackingChannel.url,
         marketplace: marketplaceChannel.url,
+        // "calendar-appointment": calendarChannel.url,
       });
       setIsLoading(false);
     };
@@ -101,6 +103,7 @@ export default function App() {
       supportChannel,
       trackingChannel,
       marketplaceChannel,
+      // calendarChannel
     ] = await sendbird.setUp();
     setUser(user);
     setChannelUrls({
@@ -109,6 +112,7 @@ export default function App() {
       "support-agent": supportChannel.url,
       "order-tracking": trackingChannel.url,
       marketplace: marketplaceChannel.url,
+      // "calendar-appointment": calendarChannel.url,
     });
     setIsLoading(false);
   };

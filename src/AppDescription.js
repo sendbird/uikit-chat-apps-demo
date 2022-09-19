@@ -178,7 +178,9 @@ function AppDescription({ reset, start }) {
             className="send-example-message-button"
             onClick={() => {
               start(
-                "https://chatsamples.com/calendar-appointment/start",
+                // "https://chatsamples.com/calendar-appointment/start",
+                // "calendar-appointment"
+                "http://localhost:8281/start",
                 "calendar-appointment"
               );
             }}

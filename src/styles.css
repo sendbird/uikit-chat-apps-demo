@@ -155,6 +155,10 @@ button {
 
 .app-description {
   height: 840px;
+  float: right;
+  width: 50%;
+  /* margin-top: 5vh; */
+  margin-bottom: 45%;
 }
 
 .app-description h3 {
@@ -360,6 +364,7 @@ button {
 .container{
   display: flex;
 }
+
 .uikit-container{
   flex:1;
   background: #6210cc;
@@ -367,7 +372,8 @@ button {
   justify-content: center;
   display: flex;
   height: 100vh;
-
+  position: fixed;
+  width: 45%;
 }
 
 .controls-container{
