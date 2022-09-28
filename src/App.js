@@ -13,8 +13,8 @@ const appManifests = [
   },
   {
     "name": "giphy-app",
-    // "url": "http://localhost:8282/app",
-    "url": "https://chatsamples.com/giphy/app",
+    "url": "http://localhost:8282/app",
+   // "url": "https://chatsamples.com/giphy/app",
     "command": "giphy"
   },
   {
@@ -47,13 +47,13 @@ const appManifests = [
     "name": "movie-tickets",
     // "url": "http://localhost:8287/app",
     // "url": "https://chatsamples.com/support-agent/app"
-    "url": "http://localhost:8286/app"
+    "url": "http://localhost:8284/app"
   },
   {
     "name": "purchase-receipt",
     // "url": "http://localhost:8287/app",
     // "url": "https://chatsamples.com/support-agent/app"
-    "url": "http://localhost:8286/app"
+    "url": "http://localhost:8283/app"
   } 
 ];
 
@@ -75,7 +75,10 @@ export default function App() {
         supportChannel,
         trackingChannel,
         marketplaceChannel,
-        // calendarChannel
+        calendarChannel,
+        movieChannel,
+        purchaseChannel,
+        giphyChannel,
       ] = await sendbird.setUp();
       console.log(promotionsChannel);
       setUser(user);
@@ -85,7 +88,10 @@ export default function App() {
         "support-agent": supportChannel.url,
         "order-tracking": trackingChannel.url,
         marketplace: marketplaceChannel.url,
-        // "calendar-appointment": calendarChannel.url,
+        "calendar-appointment": calendarChannel.url,
+        "movie-tickets": movieChannel.url,
+        "purchase-receipt": purchaseChannel.url,
+        giphy: giphyChannel.url,
       });
       setIsLoading(false);
     };
@@ -103,7 +109,10 @@ export default function App() {
       supportChannel,
       trackingChannel,
       marketplaceChannel,
-      // calendarChannel
+      calendarChannel,
+      movieChannel,
+      purchaseChannel,
+      giphyChannel
     ] = await sendbird.setUp();
     setUser(user);
     setChannelUrls({
@@ -112,7 +121,10 @@ export default function App() {
       "support-agent": supportChannel.url,
       "order-tracking": trackingChannel.url,
       marketplace: marketplaceChannel.url,
-      // "calendar-appointment": calendarChannel.url,
+      "calendar-appointment": calendarChannel.url,
+      "movie-tickets": movieChannel.url,
+      "purchase-receipt": purchaseChannel.url,
+      giphy: giphyChannel.url,
     });
     setIsLoading(false);
   };

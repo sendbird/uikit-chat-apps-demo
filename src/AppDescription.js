@@ -29,6 +29,39 @@ function AppDescription({ reset, start }) {
         </a>
       </div>
       <div className="inbox-bullets">
+      <div className="inbox-bullet">
+          <div className="bullet-icon">
+            <img
+              src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-notifications.png"
+              class="lazyloaded"
+              data-was-processed="true"
+              alt="order-updates-icon"
+            />
+          </div>
+          <h5 class="h7">Giphy</h5>
+          <h6 className="example-description">
+            Send a giphy
+          </h6>
+          <button
+            className="send-example-message-button"
+            onClick={() => {
+              start(
+                // "https://chatsamples.com/purchase-receipt/start",
+                "http://localhost:8282/start",
+                "giphy-app"
+              );
+            }}
+          >
+            Click to send giphy
+          </button>
+          <a
+            href="https://github.com/sendbird/sendbird-uikit-app-samples/blob/main/purchase-receipt/sendbird.js"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa fa-github"></i>
+          </a>
+        </div>
         <div
           className="inbox-bullet"
           onClick={() => {
@@ -146,7 +179,8 @@ function AppDescription({ reset, start }) {
             className="send-example-message-button"
             onClick={() => {
               start(
-                "https://chatsamples.com/order-tracking/start",
+                // "https://chatsamples.com/order-tracking/start",
+                "http://localhost:8286/start",
                 "order-tracking"
               );
             }}
@@ -212,7 +246,9 @@ function AppDescription({ reset, start }) {
             className="send-example-message-button"
             onClick={() => {
               start(
-                "https://chatsamples.com/movie-tickets/start",
+                // "https://chatsamples.com/movie-tickets/start",
+                // "movie-tickets"
+                "http://localhost:8284/start",
                 "movie-tickets"
               );
             }}
@@ -244,7 +280,8 @@ function AppDescription({ reset, start }) {
             className="send-example-message-button"
             onClick={() => {
               start(
-                "https://chatsamples.com/purchase-receipt/start",
+                // "https://chatsamples.com/purchase-receipt/start",
+                "http://localhost:8283/start",
                 "purchase-receipt"
               );
             }}

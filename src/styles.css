@@ -24,6 +24,10 @@ button {
   cursor: pointer;
 }
 
+.sendbird-app__button{
+  width: revert !important;
+}
+
 .component-wrapper {
   max-width: 1280px;
   padding: 30px;
@@ -158,8 +162,8 @@ button {
   height: 840px;
   float: right;
   width: 50%;
-  /* margin-top: 5vh; */
-  margin-bottom: 45%;
+  margin-top: 5vh;
+  margin-bottom: 35%;
 }
 
 .app-description h3 {
