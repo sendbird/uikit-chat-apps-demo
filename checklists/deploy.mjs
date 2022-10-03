@@ -6,6 +6,8 @@ steptacular([
     {
         name: 'Test app is working locally',
         run: async ({ utils: { prompt }, next }) => {
+            await $`ssh dev "cd /home/ubuntu/uikit-chat-apps-demo && ls"`;
+
             console.log('Make sure to pull in latest code from main as that is what get deployed to live.')
             console.log('Pull down the latest code using git pull origin main');
             console.log('Make sure the app urls all going to chatsample.com and not localhost');

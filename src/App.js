@@ -14,7 +14,7 @@ const appManifests = [
   {
     "name": "giphy-app",
     "url": "http://localhost:8282/app",
-   // "url": "https://chatsamples.com/giphy/app",
+    // "url": "https://chatsamples.com/giphy/app",
     "command": "giphy"
   },
   {
@@ -25,6 +25,8 @@ const appManifests = [
   {
     "name": "order-tracking",
     "url": "https://chatsamples.com/order-tracking/app"
+    // "url": "http://localhost:8286/start"
+
   },
   {
     "name": "concierge",
@@ -54,7 +56,7 @@ const appManifests = [
     // "url": "http://localhost:8287/app",
     // "url": "https://chatsamples.com/support-agent/app"
     "url": "http://localhost:8283/app"
-  } 
+  }
 ];
 
 export default function App() {

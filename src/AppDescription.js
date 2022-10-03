@@ -29,7 +29,7 @@ function AppDescription({ reset, start }) {
         </a>
       </div>
       <div className="inbox-bullets">
-      <div className="inbox-bullet">
+        <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-notifications.png"
@@ -179,8 +179,8 @@ function AppDescription({ reset, start }) {
             className="send-example-message-button"
             onClick={() => {
               start(
-                // "https://chatsamples.com/order-tracking/start",
-                "http://localhost:8286/start",
+                "https://chatsamples.com/order-tracking/start",
+                // "http://localhost:8286/start",
                 "order-tracking"
               );
             }}
