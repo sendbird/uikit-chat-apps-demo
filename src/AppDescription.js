@@ -29,7 +29,7 @@ function AppDescription({ reset, start }) {
         </a>
       </div>
       <div className="inbox-bullets">
-        <div className="inbox-bullet">
+        {/* <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-notifications.png"
@@ -61,7 +61,7 @@ function AppDescription({ reset, start }) {
           >
             <i class="fa fa-github"></i>
           </a>
-        </div>
+        </div> */}
         <div
           className="inbox-bullet"
           onClick={() => {
@@ -128,7 +128,7 @@ function AppDescription({ reset, start }) {
             <i class="fa fa-github"></i>
           </a>
         </div>
-        <div className="inbox-bullet">
+        {/* <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-customer-support.png"
@@ -161,7 +161,7 @@ function AppDescription({ reset, start }) {
           >
             <i class="fa fa-github"></i>
           </a>
-        </div>
+        </div> */}
         <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
@@ -212,9 +212,9 @@ function AppDescription({ reset, start }) {
             className="send-example-message-button"
             onClick={() => {
               start(
-                // "https://chatsamples.com/calendar-appointment/start",
+                "https://chatsamples.com/calendar-appointment/start",
                 // "calendar-appointment"
-                "http://localhost:8281/start",
+                // "http://localhost:8281/start",
                 "calendar-appointment"
               );
             }}
