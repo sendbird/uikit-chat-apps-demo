@@ -48,14 +48,14 @@ const appManifests = [
   {
     "name": "movie-tickets",
     // "url": "http://localhost:8287/app",
-    // "url": "https://chatsamples.com/support-agent/app"
-    "url": "http://localhost:8284/app"
+    "url": "https://chatsamples.com/movie-tickets/app"
+    // "url": "http://localhost:8284/app"
   },
   {
     "name": "purchase-receipt",
     // "url": "http://localhost:8287/app",
-    // "url": "https://chatsamples.com/support-agent/app"
-    "url": "http://localhost:8283/app"
+    "url": "https://chatsamples.com/purchase-receipt/app"
+    // "url": "http://localhost:8283/app"
   }
 ];
 

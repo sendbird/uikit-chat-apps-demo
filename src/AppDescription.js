@@ -246,9 +246,9 @@ function AppDescription({ reset, start }) {
             className="send-example-message-button"
             onClick={() => {
               start(
-                // "https://chatsamples.com/movie-tickets/start",
+                "https://chatsamples.com/movie-tickets/start",
                 // "movie-tickets"
-                "http://localhost:8284/start",
+                // "http://localhost:8284/start",
                 "movie-tickets"
               );
             }}
@@ -280,8 +280,8 @@ function AppDescription({ reset, start }) {
             className="send-example-message-button"
             onClick={() => {
               start(
-                // "https://chatsamples.com/purchase-receipt/start",
-                "http://localhost:8283/start",
+                "https://chatsamples.com/purchase-receipt/start",
+                // "http://localhost:8283/start",
                 "purchase-receipt"
               );
             }}
