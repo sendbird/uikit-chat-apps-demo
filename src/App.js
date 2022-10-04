@@ -35,9 +35,8 @@ const appManifests = [
   },
   {
     "name": "support-agent",
-    // "url": "http://localhost:8287/app",
-    // "url": "https://chatsamples.com/support-agent/app"
-    "url": "http://localhost:8289/app"
+    "url": "https://chatsamples.com/support-agent/app"
+    // "url": "http://localhost:8291/app"
   },
   {
     "name": "calendar-appointment",
