@@ -27,6 +27,14 @@ function AppDescription({ reset, start }) {
         >
           Sample code
         </a>
+        <a
+          href="https://sendbird.atlassian.net/wiki/spaces/NM/pages/1908444679/UIKit+App+Platform"
+          target="_blank"
+          rel="noreferrer"
+          className="link"
+        >
+          Design Doc
+        </a>
       </div>
       <div className="inbox-bullets">
         {/* <div className="inbox-bullet">
