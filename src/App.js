@@ -131,6 +131,7 @@ export default function App() {
   };
 
   const start = (url, name) => {
+    console.log('in start func')
     fetch(url, {
       method: "POST",
       headers: {
@@ -149,7 +150,7 @@ export default function App() {
     <SBProvider config={{ appManifests }} appId={APP_ID} userId={user.userId} nickname={NICKNAME}>
       <div className="container">
         <div className="uikit-container">
-          <CustomizedApp userId={user.userId} reset={reset} start={start} />
+          <CustomizedApp reset={reset} start={start} />
         </div>
 
         <div className="controls-container">

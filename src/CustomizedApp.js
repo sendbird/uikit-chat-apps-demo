@@ -1,14 +1,11 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import SBConversation from "@sendbird/uikit-react/Channel";
 import SBChannelList from "@sendbird/uikit-react/ChannelList";
 import withSendBird from "@sendbird/uikit-react/withSendbird";
 import "./styles.css";
 import "@sendbird/uikit-react/dist/index.css";
-// import ChatHeader from "./ChatHeader";
 import ChannelPreview from "./ChannelPreview";
 import IconArrowLeft from "./icon-arrow-left.svg";
-
-// import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
@@ -20,7 +17,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
-function CustomizedApp(reset, start) {
+function CustomizedApp({ reset, start }) {
   const [channel, setChannel] = useState(null);
 
   const onChannelSelect = (_channel) => {
@@ -45,11 +42,7 @@ function CustomizedApp(reset, start) {
         flexShrink: 0,
       },
     },
-    appBar: {
-      zIndex: theme.zIndex.drawer + 1,
-    },
     menuButton: {
-      marginRight: theme.spacing(2),
       [theme.breakpoints.up("md")]: {
         display: "none",
       },
@@ -68,8 +61,8 @@ function CustomizedApp(reset, start) {
     },
   }));
 
-  const dummyCategories = [
-    "Marketing promotions",
+  const categories = [
+    "Marketing Promotions",
     "Sales Conversations",
     "Customer Support",
     "Order Tracking",
@@ -87,9 +80,10 @@ function CustomizedApp(reset, start) {
   }
   const triggerConversation = (e) => {
     console.log(e.target.innerText);
-    if (e.target.innerText === "Marketing promotions") {
+    if (e.target.innerText === "Marketing Promotions") {
+      console.log('start=', start)
       start("https://chatsamples.com/promotion/start", "promotion");
-    } else if (e.target.innerText === "Sales conversations") {
+    } else if (e.target.innerText === "Sales Conversations") {
       start("https://chatsamples.com/sales-concierge/start", "sales-concierge");
     } else if (e.target.innerText === "Customer Support") {
       start("https://chatsamples.com/support-agent/start", "support-agent");
@@ -108,7 +102,7 @@ function CustomizedApp(reset, start) {
   const drawer = (
     <div>
       <List>
-        {dummyCategories.map((text, index) => (
+        {categories.map((text, index) => (
           <div onClick={(e) => triggerConversation(e)}>
             <ListItem button key={text}>
               <ListItemText primary={text} />
@@ -147,7 +141,7 @@ function CustomizedApp(reset, start) {
                 paper: classes.drawerPaper,
               }}
               ModalProps={{
-                keepMounted: true, // Better open performance on mobile.
+                keepMounted: true, 
               }}
             >
               <IconButton
