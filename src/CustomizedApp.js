@@ -82,19 +82,29 @@ function CustomizedApp({ reset, start }) {
     console.log(e.target.innerText);
     if (e.target.innerText === "Marketing Promotions") {
       console.log('start=', start)
-      start("https://chatsamples.com/promotion/start", "promotion");
+      // start("https://chatsamples.com/promotion/start", "promotion");
+      start( "http://localhost:8284/start", "promotion");
+      handleDrawerToggle()
+      // "http://localhost:8291/start",
     } else if (e.target.innerText === "Sales Conversations") {
       start("https://chatsamples.com/sales-concierge/start", "sales-concierge");
+      handleDrawerToggle()
     } else if (e.target.innerText === "Customer Support") {
-      start("https://chatsamples.com/support-agent/start", "support-agent");
+      // start("https://chatsamples.com/support-agent/start", "support-agent");
+      start( "http://localhost:8289/start", "support-agent");
+      handleDrawerToggle()
     } else if (e.target.innerText === "Order Tracking") {
       start("https://chatsamples.com/order-tracking/start", "order-tracking");
+      handleDrawerToggle()
     } else if (e.target.innerText === "Calendar Appointment") {
       start("https://chatsamples.com/calendar-appointment/start", "calendar-appointment");
+      handleDrawerToggle()
     } else if (e.target.innerText === "Movie Tickets") {
       start("https://chatsamples.com/movie-tickets/start", "movie-tickets");
+      handleDrawerToggle()
     } else if (e.target.innerText === "Purchase Receipt") {
       start( "https://chatsamples.com/purchase-receipt/start", "purchase-receipt");
+      handleDrawerToggle()
     } else if (e.target.innerText === "Reset Conversations") {
       reset();
     }
@@ -113,6 +123,7 @@ function CustomizedApp({ reset, start }) {
     </div>
   );
 
+  //flip hamburger
   return (
     <div className="uikit">
       {channel ? (
@@ -134,7 +145,7 @@ function CustomizedApp({ reset, start }) {
           <Hidden smUp implementation="css">
             <Drawer
               variant="temporary"
-              anchor={theme.direction === "rtl" ? "right" : "left"}
+              anchor={theme.direction === "rtl" ? "right" : "right"}
               open={mobileOpen}
               onClose={handleDrawerToggle}
               classes={{
