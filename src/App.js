@@ -149,7 +149,7 @@ export default function App() {
     <SBProvider config={{ appManifests }} appId={APP_ID} userId={user.userId} nickname={NICKNAME}>
       <div className="container">
         <div className="uikit-container">
-          <CustomizedApp userId={user.userId} />
+          <CustomizedApp userId={user.userId} reset={reset} start={start} />
         </div>
 
         <div className="controls-container">
