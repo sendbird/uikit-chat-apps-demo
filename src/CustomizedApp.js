@@ -4,7 +4,7 @@ import SBChannelList from "@sendbird/uikit-react/ChannelList";
 import withSendBird from "@sendbird/uikit-react/withSendbird";
 import "./styles.css";
 import "@sendbird/uikit-react/dist/index.css";
-import ChannelPreview from "./ChannelPreview";
+// import ChannelPreview from "./ChannelPreview";
 import IconArrowLeft from "./icon-arrow-left.svg";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Drawer from "@material-ui/core/Drawer";
@@ -16,19 +16,21 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
+// import ChatHeader from "./ChatHeader";
 
 function CustomizedApp({ reset, start }) {
   const [channel, setChannel] = useState(null);
 
   const onChannelSelect = (_channel) => {
     setChannel(_channel);
-    // window.history.pushState({}, _channel.name, "/" + _channel.url);
+    //window.history.pushState({}, _channel.name, "/" + _channel.url);
   };
 
   const onBack = () => {
     setChannel(null);
-    // window.history.pushState({}, document.title, "/");
+   // window.history.pushState({}, document.title, "/");
   };
+  console.log('CHANNEL=', channel)
 
   const drawerWidth = 240;
 
@@ -78,20 +80,16 @@ function CustomizedApp({ reset, start }) {
   function handleDrawerToggle() {
     setMobileOpen(!mobileOpen);
   }
+
   const triggerConversation = (e) => {
-    console.log(e.target.innerText);
     if (e.target.innerText === "Marketing Promotions") {
-      console.log('start=', start)
-      // start("https://chatsamples.com/promotion/start", "promotion");
-      start( "http://localhost:8284/start", "promotion");
+      start("https://chatsamples.com/promotion/start", "promotion");
       handleDrawerToggle()
-      // "http://localhost:8291/start",
     } else if (e.target.innerText === "Sales Conversations") {
       start("https://chatsamples.com/sales-concierge/start", "sales-concierge");
       handleDrawerToggle()
     } else if (e.target.innerText === "Customer Support") {
-      // start("https://chatsamples.com/support-agent/start", "support-agent");
-      start( "http://localhost:8289/start", "support-agent");
+      start("https://chatsamples.com/support-agent/start", "support-agent");
       handleDrawerToggle()
     } else if (e.target.innerText === "Order Tracking") {
       start("https://chatsamples.com/order-tracking/start", "order-tracking");
@@ -109,12 +107,13 @@ function CustomizedApp({ reset, start }) {
       reset();
     }
   };
+
   const drawer = (
     <div>
       <List>
         {categories.map((text, index) => (
-          <div onClick={(e) => triggerConversation(e)}>
-            <ListItem button key={text}>
+          <div key={text} onClick={(e) => triggerConversation(e)}>
+            <ListItem button >
               <ListItemText primary={text} />
             </ListItem>
           </div>
@@ -123,7 +122,6 @@ function CustomizedApp({ reset, start }) {
     </div>
   );
 
-  //flip hamburger
   return (
     <div className="uikit">
       {channel ? (
@@ -174,12 +172,7 @@ function CustomizedApp({ reset, start }) {
             <MenuIcon />
           </IconButton>
           <SBChannelList
-            renderChannelPreview={({ channel }) => (
-              <ChannelPreview
-                channel={channel}
-                onChannelSelect={onChannelSelect}
-              />
-            )}
+            onChannelSelect={onChannelSelect}
           />
         </div>
       )}

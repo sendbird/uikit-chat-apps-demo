@@ -420,3 +420,12 @@ button {
   flex: 1;
   padding: 40px;
 }
+
+.sendbird-channel-preview {
+  margin: 0px !important;
+  width: 100% !important;
+}
+.sendbird-channel-preview__content__upper, 
+.sendbird-channel-preview__content__lower{
+  width: 100% !important;
+} 

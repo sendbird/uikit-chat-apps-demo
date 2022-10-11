@@ -6,7 +6,7 @@ import "@sendbird/uikit-react/dist/index.css";
 function AppDescription({ reset, start }) {
   return (
     <div className="app-description">
-      <h3 class="h3">Rich Interactive Messages</h3>
+      <h3 className="h3">Rich Interactive Messages</h3>
       <p>
         A selection of rich app experiences for UIKit. Built with the app platform.
       </p>
@@ -41,12 +41,12 @@ function AppDescription({ reset, start }) {
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-notifications.png"
-              class="lazyloaded"
+              className="lazyloaded"
               data-was-processed="true"
               alt="order-updates-icon"
             />
           </div>
-          <h5 class="h7">Giphy</h5>
+          <h5 className="h7">Giphy</h5>
           <h6 className="example-description">
             Send a giphy
           </h6>
@@ -67,7 +67,7 @@ function AppDescription({ reset, start }) {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="fa fa-github"></i>
+            <i className="fa fa-github"></i>
           </a>
         </div> */}
         <div
@@ -79,12 +79,12 @@ function AppDescription({ reset, start }) {
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-marketing.png"
-              class="lazyloaded"
+              className="lazyloaded"
               data-was-processed="true"
               alt="marketing-promotions-icon"
             />
           </div>
-          <h5 class="h7">Marketing promotions</h5>
+          <h5 className="h7">Marketing promotions</h5>
           <h6 className="example-description">
             Send a 20% discount promotion to the customer
           </h6>
@@ -101,19 +101,19 @@ function AppDescription({ reset, start }) {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="fa fa-github"></i>
+            <i className="fa fa-github"></i>
           </a>
         </div>
         <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-sales-concierge.png"
-              class="lazyloaded"
+              className="lazyloaded"
               data-was-processed="true"
               alt="sales-icon"
             />
           </div>
-          <h5 class="h7">Sales conversations</h5>
+          <h5 className="h7">Sales conversations</h5>
           <h6 className="example-description">
             Share a product recommendation with the customer
           </h6>
@@ -133,19 +133,19 @@ function AppDescription({ reset, start }) {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="fa fa-github"></i>
+            <i className="fa fa-github"></i>
           </a>
         </div>
         <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-customer-support.png"
-              class="lazyloaded"
+              className="lazyloaded"
               data-was-processed="true"
               alt="customer-support-icon"
             />
           </div>
-          <h5 class="h7">Customer support</h5>
+          <h5 className="h7">Customer support</h5>
           <h6 className="example-description">
             Chat with a customer support agent
           </h6>
@@ -166,19 +166,19 @@ function AppDescription({ reset, start }) {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="fa fa-github"></i>
+            <i className="fa fa-github"></i>
           </a>
         </div>
         <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-notifications.png"
-              class="lazyloaded"
+              className="lazyloaded"
               data-was-processed="true"
               alt="order-updates-icon"
             />
           </div>
-          <h5 class="h7">Order Tracking</h5>
+          <h5 className="h7">Order Tracking</h5>
           <h6 className="example-description">
             Trigger a Sushi delivery notification
           </h6>
@@ -199,19 +199,19 @@ function AppDescription({ reset, start }) {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="fa fa-github"></i>
+            <i className="fa fa-github"></i>
           </a>
         </div>
         <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-notifications.png"
-              class="lazyloaded"
+              className="lazyloaded"
               data-was-processed="true"
               alt="order-updates-icon"
             />
           </div>
-          <h5 class="h7">Calendar Appointment</h5>
+          <h5 className="h7">Calendar Appointment</h5>
           <h6 className="example-description">
             Trigger a calendar notification
           </h6>
@@ -233,19 +233,19 @@ function AppDescription({ reset, start }) {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="fa fa-github"></i>
+            <i className="fa fa-github"></i>
           </a>
         </div>
         <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-notifications.png"
-              class="lazyloaded"
+              className="lazyloaded"
               data-was-processed="true"
               alt="order-updates-icon"
             />
           </div>
-          <h5 class="h7">Movie Tickets</h5>
+          <h5 className="h7">Movie Tickets</h5>
           <h6 className="example-description">
             Trigger a movie ticket notification
           </h6>
@@ -267,19 +267,19 @@ function AppDescription({ reset, start }) {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="fa fa-github"></i>
+            <i className="fa fa-github"></i>
           </a>
         </div>
         <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-notifications.png"
-              class="lazyloaded"
+              className="lazyloaded"
               data-was-processed="true"
               alt="order-updates-icon"
             />
           </div>
-          <h5 class="h7">Purchase Receipt</h5>
+          <h5 className="h7">Purchase Receipt</h5>
           <h6 className="example-description">
             Send a purchase notification
           </h6>
@@ -300,19 +300,19 @@ function AppDescription({ reset, start }) {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="fa fa-github"></i>
+            <i className="fa fa-github"></i>
           </a>
         </div>
         {/* <div className="inbox-bullet">
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-community-conversations@2x.png"
-              class="lazyloaded"
+              className="lazyloaded"
               data-was-processed="true"
               alt="marketplace-icon"
             />
           </div>
-          <h5 class="h7">Marketplace</h5>
+          <h5 className="h7">Marketplace</h5>
           <h6 className="example-description">
             Share a product detail card with the customer
           </h6>
@@ -329,19 +329,19 @@ function AppDescription({ reset, start }) {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="fa fa-github"></i>
+            <i className="fa fa-github"></i>
           </a>
         </div> */}
         <div className="inbox-bullet" onClick={reset}>
           <div className="bullet-icon">
             <img
               src="https://sendbird.com/wp-content/themes/sendbird-sb/assets/img/unified-inbox/inbox-community-conversations@2x.png"
-              class="lazyloaded"
+              className="lazyloaded"
               data-was-processed="true"
               alt="marketplace-icon"
             />
           </div>
-          <h5 class="h7">Reset conversation</h5>
+          <h5 className="h7">Reset conversation</h5>
         </div>
       </div>
     </div>

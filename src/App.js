@@ -19,8 +19,8 @@ const appManifests = [
   },
   {
     "name": "promotion",
-    // "url": "http://localhost:8284/app",
     "url": "https://chatsamples.com/promotion/app"
+    // "url": "http://localhost:8284/app"
   },
   {
     "name": "order-tracking",
@@ -30,8 +30,8 @@ const appManifests = [
   },
   {
     "name": "concierge",
-    // "url": "http://localhost:8287/app",
-    "url": "https://chatsamples.com/sales-concierge/app"
+    "url": "https://chatsamples.com/sales-concierge/app",
+    // "url": "http://localhost:8287/app"
   },
   {
     "name": "support-agent",
@@ -40,19 +40,16 @@ const appManifests = [
   },
   {
     "name": "calendar-appointment",
-    // "url": "http://localhost:8287/app",
     "url": "https://chatsamples.com/calendar-appointment/app"
     // "url": "http://localhost:8281/app"
   },
   {
     "name": "movie-tickets",
-    // "url": "http://localhost:8287/app",
     "url": "https://chatsamples.com/movie-tickets/app"
     // "url": "http://localhost:8284/app"
   },
   {
     "name": "purchase-receipt",
-    // "url": "http://localhost:8287/app",
     "url": "https://chatsamples.com/purchase-receipt/app"
     // "url": "http://localhost:8283/app"
   }
@@ -81,7 +78,6 @@ export default function App() {
         purchaseChannel,
         giphyChannel,
       ] = await sendbird.setUp();
-      console.log(promotionsChannel);
       setUser(user);
       setChannelUrls({
         promotion: promotionsChannel.url,
@@ -131,7 +127,6 @@ export default function App() {
   };
 
   const start = (url, name) => {
-    console.log('in start func')
     fetch(url, {
       method: "POST",
       headers: {
