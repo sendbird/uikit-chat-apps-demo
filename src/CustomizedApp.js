@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import SBConversation from "@sendbird/uikit-react/Channel";
 import SBChannelList from "@sendbird/uikit-react/ChannelList";
+import SBChannelSettings from "@sendbird/uikit-react/ChannelSettings";
 import withSendBird from "@sendbird/uikit-react/withSendbird";
 import "./styles.css";
 import "@sendbird/uikit-react/dist/index.css";
-// import ChannelPreview from "./ChannelPreview";
+import ChannelPreview from "./ChannelPreview";
 import IconArrowLeft from "./icon-arrow-left.svg";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Drawer from "@material-ui/core/Drawer";
@@ -20,17 +21,18 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 
 function CustomizedApp({ reset, start }) {
   const [channel, setChannel] = useState(null);
+  const [showSettings, setShowSettings] = useState(false);
 
-  const onChannelSelect = (_channel) => {
-    setChannel(_channel);
-    //window.history.pushState({}, _channel.name, "/" + _channel.url);
-  };
+  // const onChannelSelect = (_channel) => {
+  //   setChannel(_channel);
+  //   //window.history.pushState({}, _channel.name, "/" + _channel.url);
+  // };
 
   const onBack = () => {
     setChannel(null);
-   // window.history.pushState({}, document.title, "/");
+    // window.history.pushState({}, document.title, "/");
   };
-  console.log('CHANNEL=', channel)
+  console.log("CHANNEL=", channel);
 
   const drawerWidth = 240;
 
@@ -84,25 +86,31 @@ function CustomizedApp({ reset, start }) {
   const triggerConversation = (e) => {
     if (e.target.innerText === "Marketing Promotions") {
       start("https://chatsamples.com/promotion/start", "promotion");
-      handleDrawerToggle()
+      handleDrawerToggle();
     } else if (e.target.innerText === "Sales Conversations") {
       start("https://chatsamples.com/sales-concierge/start", "sales-concierge");
-      handleDrawerToggle()
+      handleDrawerToggle();
     } else if (e.target.innerText === "Customer Support") {
       start("https://chatsamples.com/support-agent/start", "support-agent");
-      handleDrawerToggle()
+      handleDrawerToggle();
     } else if (e.target.innerText === "Order Tracking") {
       start("https://chatsamples.com/order-tracking/start", "order-tracking");
-      handleDrawerToggle()
+      handleDrawerToggle();
     } else if (e.target.innerText === "Calendar Appointment") {
-      start("https://chatsamples.com/calendar-appointment/start", "calendar-appointment");
-      handleDrawerToggle()
+      start(
+        "https://chatsamples.com/calendar-appointment/start",
+        "calendar-appointment"
+      );
+      handleDrawerToggle();
     } else if (e.target.innerText === "Movie Tickets") {
       start("https://chatsamples.com/movie-tickets/start", "movie-tickets");
-      handleDrawerToggle()
+      handleDrawerToggle();
     } else if (e.target.innerText === "Purchase Receipt") {
-      start( "https://chatsamples.com/purchase-receipt/start", "purchase-receipt");
-      handleDrawerToggle()
+      start(
+        "https://chatsamples.com/purchase-receipt/start",
+        "purchase-receipt"
+      );
+      handleDrawerToggle();
     } else if (e.target.innerText === "Reset Conversations") {
       reset();
     }
@@ -113,7 +121,7 @@ function CustomizedApp({ reset, start }) {
       <List>
         {categories.map((text, index) => (
           <div key={text} onClick={(e) => triggerConversation(e)}>
-            <ListItem button >
+            <ListItem button>
               <ListItemText primary={text} />
             </ListItem>
           </div>
@@ -135,7 +143,20 @@ function CustomizedApp({ reset, start }) {
             // renderChannelHeader={() => (
             //   <ChatHeader channel={channel} onBack={onBack} />
             // )}
+            onChatHeaderActionClick={() => {
+              setShowSettings(true);
+            }}
           />
+          {showSettings && (
+            <div className="sendbird-app__settingspanel-wrap">
+              <SBChannelSettings
+                channelUrl={channel.url}
+                onCloseClick={() => {
+                  setShowSettings(false);
+                }}
+              />
+            </div>
+          )}
         </div>
       ) : (
         <div className="sb-channel-list">
@@ -150,7 +171,7 @@ function CustomizedApp({ reset, start }) {
                 paper: classes.drawerPaper,
               }}
               ModalProps={{
-                keepMounted: true, 
+                keepMounted: true,
               }}
             >
               <IconButton
@@ -172,7 +193,22 @@ function CustomizedApp({ reset, start }) {
             <MenuIcon />
           </IconButton>
           <SBChannelList
-            onChannelSelect={onChannelSelect}
+            renderChannelPreview={({ channel }) => (
+              <ChannelPreview
+                channel={channel}
+                onChannelSelect={(channel) => {
+                  if (channel) {
+                    setChannel(channel);
+                  }
+                }}
+              />
+            )}
+            // onChannelSelect={(channel) => {
+            //   console.log('channel=', channel)
+            //   if (channel  && channel.url) {
+            //     setChannel(channel);
+            //   }
+            // }}
           />
         </div>
       )}

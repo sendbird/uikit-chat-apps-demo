@@ -29,4 +29,3 @@ const ChannelPreview = ({ channel, onChannelSelect }) => {
   };
   
   export default ChannelPreview;
-  
