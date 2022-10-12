@@ -16,10 +16,10 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { makeStyles, useTheme } from "@mui/material/styles";
 import styled from '@emotion/styled';
 
 // import ChatHeader from "./ChatHeader";
+
 
 function CustomizedApp({ reset, start }) {
   const [channel, setChannel] = useState(null);
@@ -39,33 +39,26 @@ function CustomizedApp({ reset, start }) {
   const drawerWidth = 240;
 
   const useStyles = styled((theme) => ({
-    root: {
-      display: "flex",
-    },
     drawer: {
-      [theme.breakpoints.up("md")]: {
+      [theme.breakpoints.up("sm")]: {
         width: drawerWidth,
         flexShrink: 0,
       },
     },
     menuButton: {
-      [theme.breakpoints.up("md")]: {
+      [theme.breakpoints.up("sm")]: {
         display: "none",
       },
     },
-    toolbar: theme.mixins.toolbar,
     drawerPaper: {
       width: drawerWidth,
-    },
-    content: {
-      flexGrow: 1,
-      padding: theme.spacing(3),
     },
     closeMenuButton: {
       marginRight: "auto",
       marginLeft: 0,
     },
   }));
+
 
   const categories = [
     "Marketing Promotions",
@@ -78,7 +71,6 @@ function CustomizedApp({ reset, start }) {
     "Reset Conversations",
   ];
   const classes = useStyles();
-  const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   function handleDrawerToggle() {
@@ -131,7 +123,7 @@ function CustomizedApp({ reset, start }) {
       </List>
     </div>
   );
-
+  console.log(classes)
   return (
     <div className="uikit">
       {channel ? (
@@ -162,8 +154,9 @@ function CustomizedApp({ reset, start }) {
           <CssBaseline />
           <Hidden smUp implementation="css">
             <Drawer
+              id="drawer"
+              anchor="right"
               variant="temporary"
-              anchor={theme.direction === "rtl" ? "right" : "right"}
               open={mobileOpen}
               onClose={handleDrawerToggle}
               classes={{
@@ -173,21 +166,15 @@ function CustomizedApp({ reset, start }) {
                 keepMounted: true,
               }}
             >
-              <IconButton
-                onClick={handleDrawerToggle}
-                className={classes.closeMenuButton}
-              >
-                <CloseIcon />
-              </IconButton>
               {drawer}
             </Drawer>
           </Hidden>
           <IconButton
+            id="menu-button"
             color="inherit"
             aria-label="Open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            className={classes.menuButton}
           >
             <MenuIcon />
           </IconButton>
