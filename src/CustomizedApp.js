@@ -140,14 +140,11 @@ function CustomizedApp({ reset, start }) {
           </button>
           <SBConversation
             channelUrl={channel.url}
-            // renderChannelHeader={() => (
-            //   <ChatHeader channel={channel} onBack={onBack} />
-            // )}
             onChatHeaderActionClick={() => {
               setShowSettings(true);
             }}
           />
-          {showSettings && (
+          {/* {showSettings && (
             <div className="sendbird-app__settingspanel-wrap">
               <SBChannelSettings
                 channelUrl={channel.url}
@@ -156,7 +153,7 @@ function CustomizedApp({ reset, start }) {
                 }}
               />
             </div>
-          )}
+          )} */}
         </div>
       ) : (
         <div className="sb-channel-list">
