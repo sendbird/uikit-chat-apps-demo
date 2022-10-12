@@ -7,16 +7,18 @@ import "./styles.css";
 import "@sendbird/uikit-react/dist/index.css";
 import ChannelPreview from "./ChannelPreview";
 import IconArrowLeft from "./icon-arrow-left.svg";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Drawer from "@material-ui/core/Drawer";
-import Hidden from "@material-ui/core/Hidden";
-import IconButton from "@material-ui/core/IconButton";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import MenuIcon from "@material-ui/icons/Menu";
-import CloseIcon from "@material-ui/icons/Close";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import Drawer from "@mui/material/Drawer";
+import Hidden from "@mui/material/Hidden";
+import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import { makeStyles, useTheme } from "@mui/material/styles";
+import styled from '@emotion/styled';
+
 // import ChatHeader from "./ChatHeader";
 
 function CustomizedApp({ reset, start }) {
@@ -36,7 +38,7 @@ function CustomizedApp({ reset, start }) {
 
   const drawerWidth = 240;
 
-  const useStyles = makeStyles((theme) => ({
+  const useStyles = styled((theme) => ({
     root: {
       display: "flex",
     },
@@ -200,12 +202,12 @@ function CustomizedApp({ reset, start }) {
                 }}
               />
             )}
-            // onChannelSelect={(channel) => {
-            //   console.log('channel=', channel)
-            //   if (channel  && channel.url) {
-            //     setChannel(channel);
-            //   }
-            // }}
+          // onChannelSelect={(channel) => {
+          //   console.log('channel=', channel)
+          //   if (channel  && channel.url) {
+          //     setChannel(channel);
+          //   }
+          // }}
           />
         </div>
       )}
