@@ -1,4 +1,5 @@
 const ChannelPreview = ({ channel, onChannelSelect }) => {
+  console.log('CHANNEL=', channel)
     return (
       <div
         className="channel-preview-wrapper"
@@ -29,3 +30,4 @@ const ChannelPreview = ({ channel, onChannelSelect }) => {
   };
   
   export default ChannelPreview;
+  

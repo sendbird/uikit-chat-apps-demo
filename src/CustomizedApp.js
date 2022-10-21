@@ -5,7 +5,6 @@ import SBChannelSettings from "@sendbird/uikit-react/ChannelSettings";
 import withSendBird from "@sendbird/uikit-react/withSendbird";
 import "./styles.css";
 import "@sendbird/uikit-react/dist/index.css";
-import ChannelPreview from "./ChannelPreview";
 import IconArrowLeft from "./icon-arrow-left.svg";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Drawer from "@material-ui/core/Drawer";
@@ -190,22 +189,12 @@ function CustomizedApp({ reset, start }) {
             <MenuIcon />
           </IconButton>
           <SBChannelList
-            renderChannelPreview={({ channel }) => (
-              <ChannelPreview
-                channel={channel}
-                onChannelSelect={(channel) => {
-                  if (channel) {
-                    setChannel(channel);
-                  }
-                }}
-              />
-            )}
-            // onChannelSelect={(channel) => {
-            //   console.log('channel=', channel)
-            //   if (channel  && channel.url) {
-            //     setChannel(channel);
-            //   }
-            // }}
+            onChannelSelect={(channel) => {
+              if (channel  && channel.url) {
+                setChannel(channel);
+              }
+            }}
+            disableAutoSelect
           />
         </div>
       )}
