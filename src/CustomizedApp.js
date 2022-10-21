@@ -6,17 +6,19 @@ import withSendBird from "@sendbird/uikit-react/withSendbird";
 import "./styles.css";
 import "@sendbird/uikit-react/dist/index.css";
 import IconArrowLeft from "./icon-arrow-left.svg";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Drawer from "@material-ui/core/Drawer";
-import Hidden from "@material-ui/core/Hidden";
-import IconButton from "@material-ui/core/IconButton";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import MenuIcon from "@material-ui/icons/Menu";
-import CloseIcon from "@material-ui/icons/Close";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import Drawer from "@mui/material/Drawer";
+import Hidden from "@mui/material/Hidden";
+import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import styled from '@emotion/styled';
+
 // import ChatHeader from "./ChatHeader";
+
 
 function CustomizedApp({ reset, start }) {
   const [channel, setChannel] = useState(null);
@@ -30,34 +32,27 @@ function CustomizedApp({ reset, start }) {
 
   const drawerWidth = 240;
 
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      display: "flex",
-    },
+  const useStyles = styled((theme) => ({
     drawer: {
-      [theme.breakpoints.up("md")]: {
+      [theme.breakpoints.up("sm")]: {
         width: drawerWidth,
         flexShrink: 0,
       },
     },
     menuButton: {
-      [theme.breakpoints.up("md")]: {
+      [theme.breakpoints.up("sm")]: {
         display: "none",
       },
     },
-    toolbar: theme.mixins.toolbar,
     drawerPaper: {
       width: drawerWidth,
-    },
-    content: {
-      flexGrow: 1,
-      padding: theme.spacing(3),
     },
     closeMenuButton: {
       marginRight: "auto",
       marginLeft: 0,
     },
   }));
+
 
   const categories = [
     "Marketing Promotions",
@@ -70,7 +65,6 @@ function CustomizedApp({ reset, start }) {
     "Reset Conversations",
   ];
   const classes = useStyles();
-  const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   function handleDrawerToggle() {
@@ -123,7 +117,7 @@ function CustomizedApp({ reset, start }) {
       </List>
     </div>
   );
-
+  console.log(classes)
   return (
     <div className="uikit">
       {channel ? (
@@ -154,8 +148,9 @@ function CustomizedApp({ reset, start }) {
           <CssBaseline />
           <Hidden smUp implementation="css">
             <Drawer
+              id="drawer"
+              anchor="right"
               variant="temporary"
-              anchor={theme.direction === "rtl" ? "right" : "right"}
               open={mobileOpen}
               onClose={handleDrawerToggle}
               classes={{
@@ -165,31 +160,44 @@ function CustomizedApp({ reset, start }) {
                 keepMounted: true,
               }}
             >
-              <IconButton
-                onClick={handleDrawerToggle}
-                className={classes.closeMenuButton}
-              >
-                <CloseIcon />
-              </IconButton>
               {drawer}
             </Drawer>
           </Hidden>
           <IconButton
+            id="menu-button"
             color="inherit"
             aria-label="Open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            className={classes.menuButton}
           >
             <MenuIcon />
           </IconButton>
           <SBChannelList
+<<<<<<< HEAD
             onChannelSelect={(channel) => {
               if (channel  && channel.url) {
                 setChannel(channel);
               }
             }}
             disableAutoSelect
+=======
+            renderChannelPreview={({ channel }) => (
+              <ChannelPreview
+                channel={channel}
+                onChannelSelect={(channel) => {
+                  if (channel) {
+                    setChannel(channel);
+                  }
+                }}
+              />
+            )}
+          // onChannelSelect={(channel) => {
+          //   console.log('channel=', channel)
+          //   if (channel  && channel.url) {
+          //     setChannel(channel);
+          //   }
+          // }}
+>>>>>>> a57aefdc7689874cf2f7f651f1864478397524a0
           />
         </div>
       )}

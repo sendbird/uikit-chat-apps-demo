@@ -5,6 +5,7 @@ import CustomizedApp from "./CustomizedApp";
 import Sendbird from "./setupUser";
 import AppDescription from "./AppDescription";
 import { APP_ID, NICKNAME } from './constants';
+
 const appManifests = [
   {
     "name": "basic-chat-app",

@@ -40,7 +40,7 @@ steptacular([
             console.log('Getting latest version of the markdown enabled UIKit and installing into this app.');
             prompt('First ensure any updtes you need in UIKit have been pushed to the UIKit uikit-apps branch');
 
-            await $`ssh dev "cd /home/ubuntu/uikit-chat-apps-demo && ./scripts/install-local-uikit.sh  /home/ubuntu/sendbird-uikit-react"`;
+            await $`ssh dev "cd /home/ubuntu/uikit-chat-apps-demo && npm install && ./scripts/install-local-uikit.sh  /home/ubuntu/sendbird-uikit-react"`;
 
             prompt('Press enter to continue');
             next();

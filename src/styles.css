@@ -379,6 +379,9 @@ button {
 }
 
 @media screen and (max-width: 960px) {
+  .sendbird-conversation__messages .sendbird-conversation__messages-padding {
+    height: 100%!important;
+  }
   .uikit-container {
     visibility: hidden;
     width: 100%;
@@ -429,3 +432,13 @@ button {
 .sendbird-channel-preview__content__lower{
   width: 100% !important;
 } 
+
+
+@media only screen and (min-width: 960px) {
+  #menu-button {
+    display: none;
+  }
+  #drawer {
+    display: none;
+  }
+}
