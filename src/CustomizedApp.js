@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SBConversation from "@sendbird/uikit-react/Channel";
 import SBChannelList from "@sendbird/uikit-react/ChannelList";
-import SBChannelSettings from "@sendbird/uikit-react/ChannelSettings";
+// import SBChannelSettings from "@sendbird/uikit-react/ChannelSettings";
 import withSendBird from "@sendbird/uikit-react/withSendbird";
 import "./styles.css";
 import "@sendbird/uikit-react/dist/index.css";
@@ -21,11 +21,6 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 function CustomizedApp({ reset, start }) {
   const [channel, setChannel] = useState(null);
   const [showSettings, setShowSettings] = useState(false);
-
-  // const onChannelSelect = (_channel) => {
-  //   setChannel(_channel);
-  //   //window.history.pushState({}, _channel.name, "/" + _channel.url);
-  // };
 
   const onBack = () => {
     setChannel(null);
