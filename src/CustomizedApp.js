@@ -15,10 +15,8 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import styled from '@emotion/styled';
-
+import styled from "@emotion/styled";
 // import ChatHeader from "./ChatHeader";
-
 
 function CustomizedApp({ reset, start }) {
   const [channel, setChannel] = useState(null);
@@ -26,9 +24,7 @@ function CustomizedApp({ reset, start }) {
 
   const onBack = () => {
     setChannel(null);
-    // window.history.pushState({}, document.title, "/");
   };
-  console.log("CHANNEL=", channel);
 
   const drawerWidth = 240;
 
@@ -52,7 +48,6 @@ function CustomizedApp({ reset, start }) {
       marginLeft: 0,
     },
   }));
-
 
   const categories = [
     "Marketing Promotions",
@@ -117,7 +112,7 @@ function CustomizedApp({ reset, start }) {
       </List>
     </div>
   );
-  console.log(classes)
+  console.log(classes);
   return (
     <div className="uikit">
       {channel ? (
@@ -173,22 +168,12 @@ function CustomizedApp({ reset, start }) {
             <MenuIcon />
           </IconButton>
           <SBChannelList
-            renderChannelPreview={({ channel }) => (
-              <ChannelPreview
-                channel={channel}
-                onChannelSelect={(channel) => {
-                  if (channel) {
-                    setChannel(channel);
-                  }
-                }}
-              />
-            )}
-          // onChannelSelect={(channel) => {
-          //   console.log('channel=', channel)
-          //   if (channel  && channel.url) {
-          //     setChannel(channel);
-          //   }
-          // }}
+            onChannelSelect={(channel) => {
+              if (channel && channel.url) {
+                setChannel(channel);
+              }
+            }}
+            disableAutoSelect
           />
         </div>
       )}
