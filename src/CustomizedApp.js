@@ -173,14 +173,6 @@ function CustomizedApp({ reset, start }) {
             <MenuIcon />
           </IconButton>
           <SBChannelList
-<<<<<<< HEAD
-            onChannelSelect={(channel) => {
-              if (channel  && channel.url) {
-                setChannel(channel);
-              }
-            }}
-            disableAutoSelect
-=======
             renderChannelPreview={({ channel }) => (
               <ChannelPreview
                 channel={channel}
@@ -197,7 +189,6 @@ function CustomizedApp({ reset, start }) {
           //     setChannel(channel);
           //   }
           // }}
->>>>>>> a57aefdc7689874cf2f7f651f1864478397524a0
           />
         </div>
       )}
