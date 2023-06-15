@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: uikit-chat-apps-demo
+description: uikit-chat-apps-demo
+  annotations:
+    github.com/project-slug: sendbird/uikit-chat-apps-demo
+spec:
+  type: library
+  lifecycle: production
+  owner: dep-developer-experience
+  system: sendbird-uikit
